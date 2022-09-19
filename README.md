@@ -48,10 +48,10 @@
 1. Для работы с докер-контейнером доступны следующие скрипты:
 
         simulation/docker/run.bash  - запуск контейнера
-        simulation/docker/into.bash - запуск bash-сессии в контейнерере
+        simulation/docker/into.bash - запуск bash-сессии в контейнере
         simulation/docker/stop.bash - остановка контейнера
 
-    Соответственно, для запуска контейнера введите запустите скрипт:
+    Соответственно, для запуска контейнера запустите скрипт:
 
         bash simulation/docker/run.bash
 
