@@ -22,7 +22,7 @@ fi
 ### DOCKER RUN ----------------------------------------------------------- #
 
 docker run  ${GPU_FLAG[@]} \
-            -d -ti --rm \
+            -ti --rm \
             -e "DISPLAY" \
             -e "QT_X11_NO_MITSHM=1" \
             -e XAUTHORITY \
@@ -31,5 +31,5 @@ docker run  ${GPU_FLAG[@]} \
             -v ${SIM_ROOT}/workspace:/workspace \
             --net=host \
             --privileged \
-            --name "hsl_2022" ${IMG_NAME} \
-            > /dev/null
+            --name "hsl_2022" ${IMG_NAME} 
+
