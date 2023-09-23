@@ -6,7 +6,7 @@ SIM_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 
 xhost +local:docker > /dev/null || true
 
-IMG_NAME="nickodema/hsl_2022"
+IMG_NAME="lalayants/hsl_2022"
 GPU_FLAG=""
 
 ### Check if NVIDIA GPU flag is needed ----------------------------------- #
