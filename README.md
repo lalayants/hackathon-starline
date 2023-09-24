@@ -1,3 +1,38 @@
+# Беспилотный Хакатон СтарЛайн-2022
+Репозиторий содержит ПО, необходимое для прохождения квалификационного этапа хакатона.
+
+## Запуск
+Для запуска автономного движения и считывания QR-кодов необходимо запустить несколько launch файлов и несколько Node.
+
+1. Установка зависимостей 
+```
+apt update
+apt install python3-pip ros-galactic-cartographer-ros ros-galactic-navigation2 ros-galactic-nav2-bringup zbar-tools
+pip install pyzbar opencv-contrib-python
+```
+2. Сбор проекта
+```
+cd /workspace
+colcon build --symlink-install
+```
+3. Запуск симуляции
+```
+ros2 launch survey ozyland.launch.py
+```
+4. Запуск node камеры для определения QR-кодов
+```
+ros2 run survey camera.py
+```
+5. Запуск определения локализации и построения карты
+```
+ros2 launch explorer_bringup map.launch.py
+```
+6. Запуск автономного движения
+```
+ros2 run explorer_bringup manager
+```
+
+
 <!-- Written by Nikolay Dema <ndema2301@gmail.com>, September 2022 -->
 
 ### Хакатон СтарЛайн 2022
