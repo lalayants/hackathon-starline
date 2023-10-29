@@ -1,0 +1,52 @@
+[0.017s] Invoking command in '/workspace/src/pointcloud2laserscan/build/hsl': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble /usr/bin/cmake --build /workspace/src/pointcloud2laserscan/build/hsl -- -j12 -l12
+[0.091s] [35m[1mConsolidate compiler generated dependencies of target pointcloud2laserscan[0m
+[0.132s] [ 50%] [32mBuilding CXX object CMakeFiles/pointcloud2laserscan.dir/src/pointcloud2laserscan.cpp.o[0m
+[8.255s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:[m[K In member function ‘[01m[Kvoid MinimalSubscriber::topic_callback(sensor_msgs::msg::PointCloud2_<std::allocator<void> >::SharedPtr) const[m[K’:
+[8.255s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:75:15:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kfloat[m[K’ to ‘[01m[Kconst char*[m[K’
+[8.255s]    75 |       printf ([01;31m[Kmin_height[m[K)
+[8.255s]       |               [01;31m[K^~~~~~~~~~[m[K
+[8.256s]       |               [01;31m[K|[m[K
+[8.256s]       |               [01;31m[Kfloat[m[K
+[8.256s] In file included from [01m[K/usr/include/c++/11/cstdio:42[m[K,
+[8.256s]                  from [01m[K/usr/include/c++/11/ext/string_conversions.h:43[m[K,
+[8.256s]                  from [01m[K/usr/include/c++/11/bits/basic_string.h:6608[m[K,
+[8.256s]                  from [01m[K/usr/include/c++/11/string:55[m[K,
+[8.256s]                  from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+[8.257s]                  from [01m[K/usr/include/c++/11/system_error:41[m[K,
+[8.257s]                  from [01m[K/usr/include/c++/11/mutex:42[m[K,
+[8.257s]                  from [01m[K/usr/include/c++/11/future:38[m[K,
+[8.258s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+[8.258s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[8.258s]                  from [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:5[m[K:
+[8.258s] [01m[K/usr/include/stdio.h:356:43:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kint printf(const char*, ...)[m[K’
+[8.258s]   356 | extern int printf ([01;36m[Kconst char *__restrict __format[m[K, ...);
+[8.259s]       |                    [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~[m[K
+[8.259s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:65:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmin_z[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.259s]    65 |       float [01;35m[Kmin_z[m[K = 1000000;
+[8.259s]       |             [01;35m[K^~~~~[m[K
+[8.259s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:66:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KEPS[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.259s]    66 |       float [01;35m[KEPS[m[K = 1;
+[8.260s]       |             [01;35m[K^~~[m[K
+[8.260s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:67:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KZ[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.260s]    67 |       float [01;35m[KZ[m[K = 8.0;
+[8.260s]       |             [01;35m[K^[m[K
+[8.260s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:68:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kheight[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.260s]    68 |       float [01;35m[Kheight[m[K = 0.0;
+[8.261s]       |             [01;35m[K^~~~~~[m[K
+[8.261s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:[m[K In member function ‘[01m[Kvoid MinimalSubscriber::timer_callback()[m[K’:
+[8.261s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:108:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::pair<float, float> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[8.261s]   108 |       for (int i = 0; [01;35m[Ki < (DATA.size() + 0)* 5[m[K; i++)
+[8.261s]       |                       [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[8.262s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:93:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kall_count[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.262s]    93 |       float [01;35m[Kall_count[m[K = delta*5.0;
+[8.262s]       |             [01;35m[K^~~~~~~~~[m[K
+[8.262s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:96:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kangle[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.262s]    96 |       float [01;35m[Kangle[m[K = delta;
+[8.263s]       |             [01;35m[K^~~~~[m[K
+[8.263s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:97:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ki[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.263s]    97 |       int [01;35m[Ki[m[K = 1;
+[8.263s]       |           [01;35m[K^[m[K
+[12.860s] gmake[2]: *** [CMakeFiles/pointcloud2laserscan.dir/build.make:76: CMakeFiles/pointcloud2laserscan.dir/src/pointcloud2laserscan.cpp.o] Error 1
+[12.860s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/pointcloud2laserscan.dir/all] Error 2
+[12.860s] gmake: *** [Makefile:146: all] Error 2
+[12.864s] Invoked command in '/workspace/src/pointcloud2laserscan/build/hsl' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble /usr/bin/cmake --build /workspace/src/pointcloud2laserscan/build/hsl -- -j12 -l12

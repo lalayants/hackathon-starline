@@ -1,0 +1,24 @@
+[0m** WARNING ** io features related to pcap will be disabled[0m
+[01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:[m[K In member function ‘[01m[Kvoid MinimalSubscriber::topic_callback(sensor_msgs::msg::PointCloud2_<std::allocator<void> >::SharedPtr) const[m[K’:
+[01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:64:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmin_z[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   64 |       float [01;35m[Kmin_z[m[K = 1000000;
+      |             [01;35m[K^~~~~[m[K
+[01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:66:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KZ[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   66 |       float [01;35m[KZ[m[K = 8.0;
+      |             [01;35m[K^[m[K
+[01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:67:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kheight[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   67 |       float [01;35m[Kheight[m[K = 0.0;
+      |             [01;35m[K^~~~~~[m[K
+[01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:[m[K In member function ‘[01m[Kvoid MinimalSubscriber::timer_callback()[m[K’:
+[01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:97:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::pair<float, float> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   97 |       for (int i = 0; [01;35m[Ki < (DATA.size() + 0)* 5[m[K; i++)
+      |                       [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:83:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kall_count[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   83 |       float [01;35m[Kall_count[m[K = delta*5.0;
+      |             [01;35m[K^~~~~~~~~[m[K
+[01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:86:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kangle[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   86 |       float [01;35m[Kangle[m[K = delta;
+      |             [01;35m[K^~~~~[m[K
+[01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:87:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ki[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   87 |       int [01;35m[Ki[m[K = 1;
+      |           [01;35m[K^[m[K

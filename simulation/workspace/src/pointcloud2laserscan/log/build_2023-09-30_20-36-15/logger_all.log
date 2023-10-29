@@ -1,0 +1,107 @@
+[0.315s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.315s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f2b2d1ad270>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f2b2d99a4d0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f2b2d99a4d0>>)
+[0.387s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.387s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.387s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.387s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.387s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.387s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.387s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/workspace/src/pointcloud2laserscan'
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.417s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_cmake' and name 'hsl'
+[0.417s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.417s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.417s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.417s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.417s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.448s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.448s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.451s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /workspace/src/pointcloud2laserscan/install
+[0.452s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 8 installed packages in /workspace/install
+[0.454s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 328 installed packages in /opt/ros/humble
+[0.457s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.520s] Level 5:colcon.colcon_core.verb:set package 'hsl' build argument 'cmake_args' from command line to 'None'
+[0.521s] Level 5:colcon.colcon_core.verb:set package 'hsl' build argument 'cmake_target' from command line to 'None'
+[0.521s] Level 5:colcon.colcon_core.verb:set package 'hsl' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.521s] Level 5:colcon.colcon_core.verb:set package 'hsl' build argument 'cmake_clean_cache' from command line to 'False'
+[0.521s] Level 5:colcon.colcon_core.verb:set package 'hsl' build argument 'cmake_clean_first' from command line to 'False'
+[0.521s] Level 5:colcon.colcon_core.verb:set package 'hsl' build argument 'cmake_force_configure' from command line to 'False'
+[0.521s] Level 5:colcon.colcon_core.verb:set package 'hsl' build argument 'ament_cmake_args' from command line to 'None'
+[0.521s] Level 5:colcon.colcon_core.verb:set package 'hsl' build argument 'catkin_cmake_args' from command line to 'None'
+[0.521s] Level 5:colcon.colcon_core.verb:set package 'hsl' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.521s] DEBUG:colcon.colcon_core.verb:Building package 'hsl' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspace/src/pointcloud2laserscan/build/hsl', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspace/src/pointcloud2laserscan/install/hsl', 'merge_install': False, 'path': '/workspace/src/pointcloud2laserscan', 'symlink_install': True, 'test_result_base': None}
+[0.522s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.525s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.525s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/workspace/src/pointcloud2laserscan' with build type 'ament_cmake'
+[0.525s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/workspace/src/pointcloud2laserscan'
+[0.531s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.531s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.531s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.546s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/src/pointcloud2laserscan/build/hsl': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble /usr/bin/cmake --build /workspace/src/pointcloud2laserscan/build/hsl -- -j12 -l12
+[22.572s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/src/pointcloud2laserscan/build/hsl' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble /usr/bin/cmake --build /workspace/src/pointcloud2laserscan/build/hsl -- -j12 -l12
+[22.637s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/workspace/src/pointcloud2laserscan/build/hsl': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble /usr/bin/cmake --install /workspace/src/pointcloud2laserscan/build/hsl
+[22.677s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hsl)
+[22.679s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/workspace/src/pointcloud2laserscan/build/hsl' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble /usr/bin/cmake --install /workspace/src/pointcloud2laserscan/build/hsl
+[22.688s] Level 1:colcon.colcon_core.environment:checking '/workspace/src/pointcloud2laserscan/install/hsl' for CMake module files
+[22.689s] Level 1:colcon.colcon_core.environment:checking '/workspace/src/pointcloud2laserscan/install/hsl' for CMake config files
+[22.689s] Level 1:colcon.colcon_core.shell:create_environment_hook('hsl', 'cmake_prefix_path')
+[22.691s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/hook/cmake_prefix_path.ps1'
+[22.692s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/hook/cmake_prefix_path.dsv'
+[22.693s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/hook/cmake_prefix_path.sh'
+[22.694s] Level 1:colcon.colcon_core.environment:checking '/workspace/src/pointcloud2laserscan/install/hsl/lib'
+[22.694s] Level 1:colcon.colcon_core.environment:checking '/workspace/src/pointcloud2laserscan/install/hsl/bin'
+[22.694s] Level 1:colcon.colcon_core.environment:checking '/workspace/src/pointcloud2laserscan/install/hsl/lib/pkgconfig/hsl.pc'
+[22.694s] Level 1:colcon.colcon_core.environment:checking '/workspace/src/pointcloud2laserscan/install/hsl/lib/python3.10/site-packages'
+[22.694s] Level 1:colcon.colcon_core.environment:checking '/workspace/src/pointcloud2laserscan/install/hsl/bin'
+[22.696s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.ps1'
+[22.697s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.dsv'
+[22.697s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.sh'
+[22.698s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.bash'
+[22.698s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.zsh'
+[22.699s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/src/pointcloud2laserscan/install/hsl/share/colcon-core/packages/hsl)
+[22.740s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hsl)
+[22.745s] Level 1:colcon.colcon_core.environment:checking '/workspace/src/pointcloud2laserscan/install/hsl' for CMake module files
+[22.746s] Level 1:colcon.colcon_core.environment:checking '/workspace/src/pointcloud2laserscan/install/hsl' for CMake config files
+[22.746s] Level 1:colcon.colcon_core.shell:create_environment_hook('hsl', 'cmake_prefix_path')
+[22.748s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/hook/cmake_prefix_path.ps1'
+[22.749s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/hook/cmake_prefix_path.dsv'
+[22.750s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/hook/cmake_prefix_path.sh'
+[22.751s] Level 1:colcon.colcon_core.environment:checking '/workspace/src/pointcloud2laserscan/install/hsl/lib'
+[22.752s] Level 1:colcon.colcon_core.environment:checking '/workspace/src/pointcloud2laserscan/install/hsl/bin'
+[22.752s] Level 1:colcon.colcon_core.environment:checking '/workspace/src/pointcloud2laserscan/install/hsl/lib/pkgconfig/hsl.pc'
+[22.752s] Level 1:colcon.colcon_core.environment:checking '/workspace/src/pointcloud2laserscan/install/hsl/lib/python3.10/site-packages'
+[22.753s] Level 1:colcon.colcon_core.environment:checking '/workspace/src/pointcloud2laserscan/install/hsl/bin'
+[22.756s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.ps1'
+[22.758s] INFO:colcon.colcon_core.shell:Creating package descriptor '/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.dsv'
+[22.759s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.sh'
+[22.760s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.bash'
+[22.761s] INFO:colcon.colcon_core.shell:Creating package script '/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.zsh'
+[22.762s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/workspace/src/pointcloud2laserscan/install/hsl/share/colcon-core/packages/hsl)
+[22.762s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[22.762s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[22.762s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[22.763s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[22.772s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[22.772s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[22.772s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[22.772s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[22.776s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message
+[22.776s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[22.780s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspace/src/pointcloud2laserscan/install/local_setup.ps1'
+[22.782s] INFO:colcon.colcon_core.shell:Creating prefix util module '/workspace/src/pointcloud2laserscan/install/_local_setup_util_ps1.py'
+[22.785s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspace/src/pointcloud2laserscan/install/setup.ps1'
+[22.787s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspace/src/pointcloud2laserscan/install/local_setup.sh'
+[22.788s] INFO:colcon.colcon_core.shell:Creating prefix util module '/workspace/src/pointcloud2laserscan/install/_local_setup_util_sh.py'
+[22.788s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspace/src/pointcloud2laserscan/install/setup.sh'
+[22.790s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspace/src/pointcloud2laserscan/install/local_setup.bash'
+[22.791s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspace/src/pointcloud2laserscan/install/setup.bash'
+[22.793s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspace/src/pointcloud2laserscan/install/local_setup.zsh'
+[22.794s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspace/src/pointcloud2laserscan/install/setup.zsh'

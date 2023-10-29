@@ -1,0 +1,17 @@
+/workspace/src/pointcloud2laserscan/install/hsl/lib/hsl/pointcloud2laserscan
+/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/src/pointcloud2laserscan.cpp
+/workspace/src/pointcloud2laserscan/install/hsl/share/ament_index/resource_index/package_run_dependencies/hsl
+/workspace/src/pointcloud2laserscan/install/hsl/share/ament_index/resource_index/parent_prefix_path/hsl
+/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/environment/ament_prefix_path.sh
+/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/environment/ament_prefix_path.dsv
+/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/environment/path.sh
+/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/environment/path.dsv
+/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/local_setup.bash
+/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/local_setup.sh
+/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/local_setup.zsh
+/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/local_setup.dsv
+/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.dsv
+/workspace/src/pointcloud2laserscan/install/hsl/share/ament_index/resource_index/packages/hsl
+/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/cmake/hslConfig.cmake
+/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/cmake/hslConfig-version.cmake
+/workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.xml

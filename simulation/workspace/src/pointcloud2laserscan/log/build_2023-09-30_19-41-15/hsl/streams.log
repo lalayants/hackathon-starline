@@ -1,0 +1,50 @@
+[0.021s] Invoking command in '/workspace/src/pointcloud2laserscan/build/hsl': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble /usr/bin/cmake --build /workspace/src/pointcloud2laserscan/build/hsl -- -j12 -l12
+[0.111s] [35m[1mConsolidate compiler generated dependencies of target pointcloud2laserscan[0m
+[0.163s] [ 50%] [32mBuilding CXX object CMakeFiles/pointcloud2laserscan.dir/src/pointcloud2laserscan.cpp.o[0m
+[8.159s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:[m[K In member function ‘[01m[Kvoid MinimalSubscriber::topic_callback(sensor_msgs::msg::PointCloud2_<std::allocator<void> >::SharedPtr) const[m[K’:
+[8.159s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:65:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmin_z[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.159s]    65 |       float [01;35m[Kmin_z[m[K = 1000000;
+[8.159s]       |             [01;35m[K^~~~~[m[K
+[8.159s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:67:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KZ[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.159s]    67 |       float [01;35m[KZ[m[K = 8.0;
+[8.160s]       |             [01;35m[K^[m[K
+[8.160s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:68:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kheight[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.160s]    68 |       float [01;35m[Kheight[m[K = 0.0;
+[8.160s]       |             [01;35m[K^~~~~~[m[K
+[8.160s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:[m[K In member function ‘[01m[Kvoid MinimalSubscriber::timer_callback()[m[K’:
+[8.160s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:101:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::pair<float, float> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[8.160s]   101 |       for (int i = 0; [01;35m[Ki < (DATA.size() + 0)* 5[m[K; i++)
+[8.161s]       |                       [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[8.161s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:86:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kall_count[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.161s]    86 |       float [01;35m[Kall_count[m[K = delta*5.0;
+[8.161s]       |             [01;35m[K^~~~~~~~~[m[K
+[8.161s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:89:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kangle[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.161s]    89 |       float [01;35m[Kangle[m[K = delta;
+[8.162s]       |             [01;35m[K^~~~~[m[K
+[8.162s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:90:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ki[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[8.162s]    90 |       int [01;35m[Ki[m[K = 1;
+[8.162s]       |           [01;35m[K^[m[K
+[17.356s] [100%] [32m[1mLinking CXX executable pointcloud2laserscan[0m
+[20.007s] [100%] Built target pointcloud2laserscan
+[20.023s] Invoked command in '/workspace/src/pointcloud2laserscan/build/hsl' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble /usr/bin/cmake --build /workspace/src/pointcloud2laserscan/build/hsl -- -j12 -l12
+[20.083s] Invoking command in '/workspace/src/pointcloud2laserscan/build/hsl': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble /usr/bin/cmake --install /workspace/src/pointcloud2laserscan/build/hsl
+[20.096s] -- Install configuration: ""
+[20.096s] -- Execute custom install script
+[20.096s] -- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/lib/hsl/pointcloud2laserscan
+[20.097s] -- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/src/pointcloud2laserscan.cpp
+[20.097s] -- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/ament_index/resource_index/package_run_dependencies/hsl
+[20.098s] -- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/ament_index/resource_index/parent_prefix_path/hsl
+[20.098s] -- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/environment/ament_prefix_path.sh
+[20.098s] -- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/environment/ament_prefix_path.dsv
+[20.098s] -- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/environment/path.sh
+[20.098s] -- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/environment/path.dsv
+[20.098s] -- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/local_setup.bash
+[20.099s] -- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/local_setup.sh
+[20.099s] -- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/local_setup.zsh
+[20.099s] -- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/local_setup.dsv
+[20.099s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.dsv
+[20.111s] -- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/ament_index/resource_index/packages/hsl
+[20.111s] -- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/cmake/hslConfig.cmake
+[20.111s] -- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/cmake/hslConfig-version.cmake
+[20.112s] -- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.xml
+[20.116s] Invoked command in '/workspace/src/pointcloud2laserscan/build/hsl' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble /usr/bin/cmake --install /workspace/src/pointcloud2laserscan/build/hsl

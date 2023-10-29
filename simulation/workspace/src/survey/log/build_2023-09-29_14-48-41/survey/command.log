@@ -1,0 +1,2 @@
+Invoking command in '/workspace/src/survey/build/survey': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /workspace/src/survey -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspace/src/survey/install/survey
+Invoked command in '/workspace/src/survey/build/survey' returned '-2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /workspace/src/survey -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspace/src/survey/install/survey

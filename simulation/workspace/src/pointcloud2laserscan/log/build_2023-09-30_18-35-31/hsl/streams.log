@@ -1,0 +1,204 @@
+[0.016s] Invoking command in '/workspace/src/pointcloud2laserscan/build/hsl': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble /usr/bin/cmake /workspace/src/pointcloud2laserscan -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspace/src/pointcloud2laserscan/install/hsl
+[0.146s] -- The C compiler identification is GNU 11.4.0
+[0.232s] -- The CXX compiler identification is GNU 11.4.0
+[0.244s] -- Detecting C compiler ABI info
+[0.348s] -- Detecting C compiler ABI info - done
+[0.356s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.356s] -- Detecting C compile features
+[0.356s] -- Detecting C compile features - done
+[0.359s] -- Detecting CXX compiler ABI info
+[0.498s] -- Detecting CXX compiler ABI info - done
+[0.508s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.508s] -- Detecting CXX compile features
+[0.509s] -- Detecting CXX compile features - done
+[0.522s] -- Found ament_cmake: 1.3.5 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.797s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[0.888s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.948s] -- Found xacro: 2.0.8 (/opt/ros/humble/share/xacro/cmake)
+[0.950s] -- Found rclpy: 3.3.9 (/opt/ros/humble/share/rclpy/cmake)
+[0.953s] -- Found rclcpp: 16.0.5 (/opt/ros/humble/share/rclcpp/cmake)
+[1.029s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.038s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.055s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.077s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.106s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.210s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.215s] -- Found rmw_fastrtps_cpp: 6.2.3 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.376s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.420s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.489s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.506s] -- Looking for pthread.h
+[1.624s] -- Looking for pthread.h - found
+[1.624s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.732s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.734s] -- Found Threads: TRUE  
+[1.988s] -- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)
+[2.058s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[2.190s] -- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+[2.239s] -- Checking for module 'eigen3'
+[2.261s] --   Found eigen3, version 3.4.0
+[2.313s] -- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") 
+[2.313s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[2.364s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.65.0") found components: system filesystem date_time iostreams serialization 
+[2.392s] -- Checking for module 'flann'
+[2.416s] --   Found flann, version 1.9.1
+[2.488s] -- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  
+[2.489s] -- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+[2.536s] -- Found GLEW: /usr/lib/x86_64-linux-gnu/libGLEW.so  
+[2.544s] -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL GLX 
+[2.794s] -- Found MPI_C: /usr/lib/x86_64-linux-gnu/libmpi.so (found version "3.1") 
+[2.794s] -- Found MPI: TRUE (found version "3.1") found components: C 
+[2.800s] -- Found JsonCpp: /usr/lib/x86_64-linux-gnu/libjsoncpp.so (found suitable version "1.9.5", minimum required is "0.7.0") 
+[2.810s] -- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") 
+[2.827s] -- Found PNG: /usr/lib/x86_64-linux-gnu/libpng.so (found version "1.6.37") 
+[2.854s] -- Found Eigen3: /usr/include/eigen3 (found version "3.4.0") 
+[3.007s] -- Found X11: /usr/include   
+[3.008s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
+[3.126s] -- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found
+[3.126s] -- Looking for gethostbyname
+[3.238s] -- Looking for gethostbyname - found
+[3.238s] -- Looking for connect
+[3.350s] -- Looking for connect - found
+[3.351s] -- Looking for remove
+[3.458s] -- Looking for remove - found
+[3.458s] -- Looking for shmat
+[3.552s] -- Looking for shmat - found
+[3.552s] -- Looking for IceConnectionNumber in ICE
+[3.668s] -- Looking for IceConnectionNumber in ICE - found
+[3.811s] -- Found EXPAT: /usr/lib/x86_64-linux-gnu/libexpat.so (found version "2.4.7") 
+[3.814s] -- Found double-conversion: /usr/lib/x86_64-linux-gnu/libdouble-conversion.so  
+[3.818s] -- Found LZ4: /usr/lib/x86_64-linux-gnu/liblz4.so (found version "1.9.3") 
+[3.821s] -- Found LZMA: /usr/lib/x86_64-linux-gnu/liblzma.so (found version "5.2.5") 
+[3.865s] -- Found JPEG: /usr/lib/x86_64-linux-gnu/libjpeg.so (found version "80") 
+[3.871s] -- Found TIFF: /usr/lib/x86_64-linux-gnu/libtiff.so (found version "4.3.0")  
+[3.875s] -- Found Freetype: /usr/lib/x86_64-linux-gnu/libfreetype.so (found version "2.11.1") 
+[3.883s] -- Found utf8cpp: /usr/include/utf8cpp  
+[4.013s] -- Checking for module 'libusb-1.0'
+[4.038s] --   Found libusb-1.0, version 1.0.25
+[4.100s] -- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  
+[4.104s] -- Found OpenNI: /usr/lib/libOpenNI.so;libusb::libusb (found version "1.5.4.0") 
+[4.104s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[4.206s] -- Found OpenNI2: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb (found version "2.2.0.33") 
+[4.207s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[4.207s] [0m** WARNING ** io features related to pcap will be disabled[0m
+[4.417s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[4.431s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[4.441s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[4.646s] -- Found Qhull version 8.0.2
+[4.836s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[5.031s] -- looking for PCL_COMMON
+[5.032s] -- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  
+[5.032s] -- looking for PCL_KDTREE
+[5.033s] -- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  
+[5.033s] -- looking for PCL_OCTREE
+[5.034s] -- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  
+[5.034s] -- looking for PCL_SEARCH
+[5.035s] -- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  
+[5.035s] -- looking for PCL_SAMPLE_CONSENSUS
+[5.036s] -- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  
+[5.036s] -- looking for PCL_FILTERS
+[5.037s] -- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  
+[5.037s] -- looking for PCL_2D
+[5.038s] -- Found PCL_2D: /usr/include/pcl-1.12  
+[5.038s] -- looking for PCL_GEOMETRY
+[5.038s] -- Found PCL_GEOMETRY: /usr/include/pcl-1.12  
+[5.039s] -- looking for PCL_IO
+[5.040s] -- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  
+[5.040s] -- looking for PCL_FEATURES
+[5.041s] -- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  
+[5.041s] -- looking for PCL_ML
+[5.042s] -- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  
+[5.042s] -- looking for PCL_SEGMENTATION
+[5.042s] -- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  
+[5.043s] -- looking for PCL_VISUALIZATION
+[5.044s] -- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  
+[5.044s] -- looking for PCL_SURFACE
+[5.045s] -- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  
+[5.045s] -- looking for PCL_REGISTRATION
+[5.046s] -- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  
+[5.046s] -- looking for PCL_KEYPOINTS
+[5.049s] -- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  
+[5.050s] -- looking for PCL_TRACKING
+[5.051s] -- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  
+[5.051s] -- looking for PCL_RECOGNITION
+[5.052s] -- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  
+[5.052s] -- looking for PCL_STEREO
+[5.053s] -- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  
+[5.054s] -- looking for PCL_APPS
+[5.055s] -- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  
+[5.055s] -- looking for PCL_IN_HAND_SCANNER
+[5.055s] -- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  
+[5.056s] -- looking for PCL_MODELER
+[5.056s] -- Found PCL_MODELER: /usr/include/pcl-1.12  
+[5.056s] -- looking for PCL_POINT_CLOUD_EDITOR
+[5.057s] -- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  
+[5.057s] -- looking for PCL_OUTOFCORE
+[5.058s] -- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  
+[5.058s] -- looking for PCL_PEOPLE
+[5.059s] -- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  
+[5.060s] -- Found PCL: pcl_common;pcl_kdtree;pcl_octree;pcl_search;pcl_sample_consensus;pcl_filters;pcl_io;pcl_features;pcl_ml;pcl_segmentation;pcl_visualization;pcl_surface;pcl_registration;pcl_keypoints;pcl_tracking;pcl_recognition;pcl_stereo;pcl_apps;pcl_outofcore;pcl_people;Boost::system;Boost::filesystem;Boost::date_time;Boost::iostreams;Boost::serialization;/usr/lib/libOpenNI.so;libusb::libusb;/usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb;VTK::ChartsCore;VTK::CommonColor;VTK::CommonComputationalGeometry;VTK::CommonCore;VTK::CommonDataModel;VTK::CommonExecutionModel;VTK::CommonMath;VTK::CommonMisc;VTK::CommonTransforms;VTK::FiltersCore;VTK::FiltersExtraction;VTK::FiltersGeneral;VTK::FiltersGeometry;VTK::FiltersModeling;VTK::FiltersSources;VTK::ImagingCore;VTK::ImagingSources;VTK::InteractionImage;VTK::InteractionStyle;VTK::InteractionWidgets;VTK::IOCore;VTK::IOGeometry;VTK::IOImage;VTK::IOLegacy;VTK::IOPLY;VTK::RenderingAnnotation;VTK::RenderingCore;VTK::RenderingContext2D;VTK::RenderingLOD;VTK::RenderingFreeType;VTK::ViewsCore;VTK::ViewsContext2D;VTK::RenderingOpenGL2;VTK::GUISupportQt;FLANN::FLANN;QHULL::QHULL (Required is at least version "1.2") 
+[5.063s] -- Found pcl_conversions: 2.4.0 (/opt/ros/humble/share/pcl_conversions/cmake)
+[5.289s] -- Found ament_lint_auto: 0.12.7 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[5.412s] -- Added test 'copyright' to check source files copyright and LICENSE
+[5.416s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[5.416s] -- Configured cppcheck include dirs: 
+[5.417s] -- Configured cppcheck exclude dirs and/or files: 
+[5.424s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[5.424s] -- Configured cpplint exclude dirs and/or files: 
+[5.427s] -- Added test 'lint_cmake' to check CMake code style
+[5.431s] -- Added test 'uncrustify' to check C / C++ code style
+[5.431s] -- Configured uncrustify additional arguments: 
+[5.432s] -- Added test 'xmllint' to check XML markup files
+[5.434s] -- Configuring done
+[5.482s] -- Generating done
+[5.486s] -- Build files have been written to: /workspace/src/pointcloud2laserscan/build/hsl
+[5.511s] Invoked command in '/workspace/src/pointcloud2laserscan/build/hsl' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble /usr/bin/cmake /workspace/src/pointcloud2laserscan -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspace/src/pointcloud2laserscan/install/hsl
+[5.514s] Invoking command in '/workspace/src/pointcloud2laserscan/build/hsl': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble /usr/bin/cmake --build /workspace/src/pointcloud2laserscan/build/hsl -- -j12 -l12
+[5.592s] [ 50%] [32mBuilding CXX object CMakeFiles/pointcloud2laserscan.dir/src/pointcloud2laserscan.cpp.o[0m
+[13.813s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:[m[K In member function ‘[01m[Kvoid MinimalSubscriber::topic_callback(sensor_msgs::msg::PointCloud2_<std::allocator<void> >::SharedPtr) const[m[K’:
+[13.814s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:64:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmin_z[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[13.814s]    64 |       float [01;35m[Kmin_z[m[K = 1000000;
+[13.814s]       |             [01;35m[K^~~~~[m[K
+[13.814s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:66:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[KZ[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[13.814s]    66 |       float [01;35m[KZ[m[K = 8.0;
+[13.814s]       |             [01;35m[K^[m[K
+[13.815s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:67:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kheight[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[13.815s]    67 |       float [01;35m[Kheight[m[K = 0.0;
+[13.815s]       |             [01;35m[K^~~~~~[m[K
+[13.815s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:[m[K In member function ‘[01m[Kvoid MinimalSubscriber::timer_callback()[m[K’:
+[13.815s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:97:25:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::vector<std::pair<float, float> >::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[13.815s]    97 |       for (int i = 0; [01;35m[Ki < (DATA.size() + 0)* 5[m[K; i++)
+[13.815s]       |                       [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[13.816s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:83:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kall_count[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[13.816s]    83 |       float [01;35m[Kall_count[m[K = delta*5.0;
+[13.816s]       |             [01;35m[K^~~~~~~~~[m[K
+[13.816s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:86:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kangle[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[13.816s]    86 |       float [01;35m[Kangle[m[K = delta;
+[13.816s]       |             [01;35m[K^~~~~[m[K
+[13.816s] [01m[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:87:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ki[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[13.816s]    87 |       int [01;35m[Ki[m[K = 1;
+[13.816s]       |           [01;35m[K^[m[K
+[22.958s] [100%] [32m[1mLinking CXX executable pointcloud2laserscan[0m
+[25.642s] [100%] Built target pointcloud2laserscan
+[25.661s] Invoked command in '/workspace/src/pointcloud2laserscan/build/hsl' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble /usr/bin/cmake --build /workspace/src/pointcloud2laserscan/build/hsl -- -j12 -l12
+[25.711s] Invoking command in '/workspace/src/pointcloud2laserscan/build/hsl': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble /usr/bin/cmake --install /workspace/src/pointcloud2laserscan/build/hsl
+[25.726s] -- Install configuration: ""
+[25.727s] -- Execute custom install script
+[25.728s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/lib/hsl/pointcloud2laserscan
+[25.743s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/src/pointcloud2laserscan.cpp
+[25.757s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/ament_index/resource_index/package_run_dependencies/hsl
+[25.768s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/ament_index/resource_index/parent_prefix_path/hsl
+[25.778s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/environment/ament_prefix_path.sh
+[25.789s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/environment/ament_prefix_path.dsv
+[25.801s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/environment/path.sh
+[25.815s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/environment/path.dsv
+[25.827s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/local_setup.bash
+[25.844s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/local_setup.sh
+[25.858s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/local_setup.zsh
+[25.874s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/local_setup.dsv
+[25.883s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.dsv
+[25.892s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/ament_index/resource_index/packages/hsl
+[25.904s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/cmake/hslConfig.cmake
+[25.913s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/cmake/hslConfig-version.cmake
+[25.927s] -- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.xml
+[25.940s] Invoked command in '/workspace/src/pointcloud2laserscan/build/hsl' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble /usr/bin/cmake --install /workspace/src/pointcloud2laserscan/build/hsl

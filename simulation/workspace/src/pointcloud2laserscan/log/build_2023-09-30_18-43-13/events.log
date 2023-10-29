@@ -1,0 +1,245 @@
+[0.000000] (-) TimerEvent: {}
+[0.000244] (hsl) JobQueued: {'identifier': 'hsl', 'dependencies': OrderedDict()}
+[0.000678] (hsl) JobStarted: {'identifier': 'hsl'}
+[0.017837] (hsl) JobProgress: {'identifier': 'hsl', 'progress': 'cmake'}
+[0.018881] (hsl) JobProgress: {'identifier': 'hsl', 'progress': 'build'}
+[0.020033] (hsl) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspace/src/pointcloud2laserscan/build/hsl', '--', '-j12', '-l12'], 'cwd': '/workspace/src/pointcloud2laserscan/build/hsl', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('TMUX', '/tmp/tmux-0/default,514,0'), ('WS', '/workspace'), ('HOSTNAME', 'homa-NMH-WCX9'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/workspace/install/explorer_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/workspace/src/pointcloud2laserscan/src'), ('TERM_PROGRAM_VERSION', '3.2a'), ('ROS_PYTHON_VERSION', '3'), ('LC_CTYPE', 'C.UTF-8'), ('COLCON_PREFIX_PATH', '/workspace/src/pointcloud2laserscan/install:/workspace/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'screen'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('TERM_PROGRAM', 'tmux'), ('ROS_DOMAIN_ID', '231'), ('AMENT_PREFIX_PATH', '/workspace/src/pointcloud2laserscan/install/hsl:/workspace/install/survey:/workspace/install/hsl:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_interfaces:/workspace/install/explorer_cartographer:/workspace/install/explorer_bringup:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PWD', '/workspace/src/pointcloud2laserscan/build/hsl'), ('PYTHONPATH', '/workspace/build/explorer_wanderer:/workspace/install/explorer_wanderer/lib/python3.10/site-packages:/workspace/build/explorer_navigation2:/workspace/install/explorer_navigation2/lib/python3.10/site-packages:/workspace/install/explorer_interfaces/local/lib/python3.10/dist-packages:/workspace/build/explorer_bringup:/workspace/install/explorer_bringup/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('TMUX_PANE', '%2'), ('CMAKE_PREFIX_PATH', '/workspace/src/pointcloud2laserscan/install/hsl:/workspace/install/survey:/workspace/install/hsl:/workspace/install/explorer_interfaces:/workspace/install/explorer_cartographer:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble')]), 'shell': False}
+[0.098862] (-) TimerEvent: {}
+[0.104254] (hsl) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target pointcloud2laserscan\x1b[0m\n'}
+[0.148676] (hsl) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/pointcloud2laserscan.dir/src/pointcloud2laserscan.cpp.o\x1b[0m\n'}
+[0.199025] (-) TimerEvent: {}
+[0.299560] (-) TimerEvent: {}
+[0.400215] (-) TimerEvent: {}
+[0.500715] (-) TimerEvent: {}
+[0.601333] (-) TimerEvent: {}
+[0.702266] (-) TimerEvent: {}
+[0.802912] (-) TimerEvent: {}
+[0.903393] (-) TimerEvent: {}
+[1.003956] (-) TimerEvent: {}
+[1.104547] (-) TimerEvent: {}
+[1.205144] (-) TimerEvent: {}
+[1.305858] (-) TimerEvent: {}
+[1.406344] (-) TimerEvent: {}
+[1.507011] (-) TimerEvent: {}
+[1.607710] (-) TimerEvent: {}
+[1.708318] (-) TimerEvent: {}
+[1.808946] (-) TimerEvent: {}
+[1.909508] (-) TimerEvent: {}
+[2.010104] (-) TimerEvent: {}
+[2.110843] (-) TimerEvent: {}
+[2.211451] (-) TimerEvent: {}
+[2.312079] (-) TimerEvent: {}
+[2.412588] (-) TimerEvent: {}
+[2.513114] (-) TimerEvent: {}
+[2.613613] (-) TimerEvent: {}
+[2.714241] (-) TimerEvent: {}
+[2.815162] (-) TimerEvent: {}
+[2.916593] (-) TimerEvent: {}
+[3.017298] (-) TimerEvent: {}
+[3.117916] (-) TimerEvent: {}
+[3.218385] (-) TimerEvent: {}
+[3.318953] (-) TimerEvent: {}
+[3.419742] (-) TimerEvent: {}
+[3.520626] (-) TimerEvent: {}
+[3.621242] (-) TimerEvent: {}
+[3.721635] (-) TimerEvent: {}
+[3.822341] (-) TimerEvent: {}
+[3.923108] (-) TimerEvent: {}
+[4.023628] (-) TimerEvent: {}
+[4.124301] (-) TimerEvent: {}
+[4.224901] (-) TimerEvent: {}
+[4.325383] (-) TimerEvent: {}
+[4.426009] (-) TimerEvent: {}
+[4.526614] (-) TimerEvent: {}
+[4.627034] (-) TimerEvent: {}
+[4.727638] (-) TimerEvent: {}
+[4.828072] (-) TimerEvent: {}
+[4.928695] (-) TimerEvent: {}
+[5.029304] (-) TimerEvent: {}
+[5.129927] (-) TimerEvent: {}
+[5.230565] (-) TimerEvent: {}
+[5.331268] (-) TimerEvent: {}
+[5.431930] (-) TimerEvent: {}
+[5.532590] (-) TimerEvent: {}
+[5.633102] (-) TimerEvent: {}
+[5.733716] (-) TimerEvent: {}
+[5.834313] (-) TimerEvent: {}
+[5.934907] (-) TimerEvent: {}
+[6.035364] (-) TimerEvent: {}
+[6.135784] (-) TimerEvent: {}
+[6.236477] (-) TimerEvent: {}
+[6.337208] (-) TimerEvent: {}
+[6.437763] (-) TimerEvent: {}
+[6.538170] (-) TimerEvent: {}
+[6.638673] (-) TimerEvent: {}
+[6.739221] (-) TimerEvent: {}
+[6.839782] (-) TimerEvent: {}
+[6.940353] (-) TimerEvent: {}
+[7.040828] (-) TimerEvent: {}
+[7.141374] (-) TimerEvent: {}
+[7.242256] (-) TimerEvent: {}
+[7.343081] (-) TimerEvent: {}
+[7.443594] (-) TimerEvent: {}
+[7.544306] (-) TimerEvent: {}
+[7.644991] (-) TimerEvent: {}
+[7.745583] (-) TimerEvent: {}
+[7.846043] (-) TimerEvent: {}
+[7.946717] (-) TimerEvent: {}
+[8.047151] (-) TimerEvent: {}
+[8.147631] (-) TimerEvent: {}
+[8.248295] (-) TimerEvent: {}
+[8.348885] (-) TimerEvent: {}
+[8.423360] (hsl) StderrLine: {'line': b'\x1b[01m\x1b[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid MinimalSubscriber::topic_callback(sensor_msgs::msg::PointCloud2_<std::allocator<void> >::SharedPtr) const\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[8.423786] (hsl) StderrLine: {'line': b'\x1b[01m\x1b[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:63:13:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kmin_z\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[8.423952] (hsl) StderrLine: {'line': b'   63 |       float \x1b[01;35m\x1b[Kmin_z\x1b[m\x1b[K = 1000000;\n'}
+[8.424086] (hsl) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[8.424216] (hsl) StderrLine: {'line': b'\x1b[01m\x1b[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:65:13:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[KZ\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[8.424360] (hsl) StderrLine: {'line': b'   65 |       float \x1b[01;35m\x1b[KZ\x1b[m\x1b[K = 8.0;\n'}
+[8.424479] (hsl) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[8.424592] (hsl) StderrLine: {'line': b'\x1b[01m\x1b[K/workspace/src/pointcloud2laserscan/src/pointcloud2laserscan.cpp:66:13:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kheight\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[8.424744] (hsl) StderrLine: {'line': b'   66 |       float \x1b[01;35m\x1b[Kheight\x1b[m\x1b[K = 0.0;\n'}
+[8.424920] (hsl) StderrLine: {'line': b'      |             \x1b[01;35m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[8.449013] (-) TimerEvent: {}
+[8.549491] (-) TimerEvent: {}
+[8.650186] (-) TimerEvent: {}
+[8.750732] (-) TimerEvent: {}
+[8.851373] (-) TimerEvent: {}
+[8.951979] (-) TimerEvent: {}
+[9.052493] (-) TimerEvent: {}
+[9.152994] (-) TimerEvent: {}
+[9.253477] (-) TimerEvent: {}
+[9.353975] (-) TimerEvent: {}
+[9.454598] (-) TimerEvent: {}
+[9.555368] (-) TimerEvent: {}
+[9.656457] (-) TimerEvent: {}
+[9.757301] (-) TimerEvent: {}
+[9.858096] (-) TimerEvent: {}
+[9.958664] (-) TimerEvent: {}
+[10.059485] (-) TimerEvent: {}
+[10.159922] (-) TimerEvent: {}
+[10.260401] (-) TimerEvent: {}
+[10.361297] (-) TimerEvent: {}
+[10.461924] (-) TimerEvent: {}
+[10.562355] (-) TimerEvent: {}
+[10.662781] (-) TimerEvent: {}
+[10.763219] (-) TimerEvent: {}
+[10.863765] (-) TimerEvent: {}
+[10.964338] (-) TimerEvent: {}
+[11.065257] (-) TimerEvent: {}
+[11.166011] (-) TimerEvent: {}
+[11.266524] (-) TimerEvent: {}
+[11.367191] (-) TimerEvent: {}
+[11.467991] (-) TimerEvent: {}
+[11.568927] (-) TimerEvent: {}
+[11.669444] (-) TimerEvent: {}
+[11.770124] (-) TimerEvent: {}
+[11.870628] (-) TimerEvent: {}
+[11.971273] (-) TimerEvent: {}
+[12.071878] (-) TimerEvent: {}
+[12.172523] (-) TimerEvent: {}
+[12.273013] (-) TimerEvent: {}
+[12.373382] (-) TimerEvent: {}
+[12.473839] (-) TimerEvent: {}
+[12.574428] (-) TimerEvent: {}
+[12.675539] (-) TimerEvent: {}
+[12.776132] (-) TimerEvent: {}
+[12.876614] (-) TimerEvent: {}
+[12.977232] (-) TimerEvent: {}
+[13.077918] (-) TimerEvent: {}
+[13.178374] (-) TimerEvent: {}
+[13.278955] (-) TimerEvent: {}
+[13.379638] (-) TimerEvent: {}
+[13.480523] (-) TimerEvent: {}
+[13.581186] (-) TimerEvent: {}
+[13.681725] (-) TimerEvent: {}
+[13.782346] (-) TimerEvent: {}
+[13.882810] (-) TimerEvent: {}
+[13.983299] (-) TimerEvent: {}
+[14.083731] (-) TimerEvent: {}
+[14.184582] (-) TimerEvent: {}
+[14.285166] (-) TimerEvent: {}
+[14.385629] (-) TimerEvent: {}
+[14.486080] (-) TimerEvent: {}
+[14.586492] (-) TimerEvent: {}
+[14.687174] (-) TimerEvent: {}
+[14.788036] (-) TimerEvent: {}
+[14.888664] (-) TimerEvent: {}
+[14.989250] (-) TimerEvent: {}
+[15.089932] (-) TimerEvent: {}
+[15.190491] (-) TimerEvent: {}
+[15.291078] (-) TimerEvent: {}
+[15.391773] (-) TimerEvent: {}
+[15.492252] (-) TimerEvent: {}
+[15.592828] (-) TimerEvent: {}
+[15.693299] (-) TimerEvent: {}
+[15.793995] (-) TimerEvent: {}
+[15.894853] (-) TimerEvent: {}
+[15.995678] (-) TimerEvent: {}
+[16.096540] (-) TimerEvent: {}
+[16.197118] (-) TimerEvent: {}
+[16.297622] (-) TimerEvent: {}
+[16.398439] (-) TimerEvent: {}
+[16.499210] (-) TimerEvent: {}
+[16.599927] (-) TimerEvent: {}
+[16.700463] (-) TimerEvent: {}
+[16.801092] (-) TimerEvent: {}
+[16.902089] (-) TimerEvent: {}
+[17.002863] (-) TimerEvent: {}
+[17.103488] (-) TimerEvent: {}
+[17.203999] (-) TimerEvent: {}
+[17.304743] (-) TimerEvent: {}
+[17.381201] (hsl) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable pointcloud2laserscan\x1b[0m\n'}
+[17.405008] (-) TimerEvent: {}
+[17.505753] (-) TimerEvent: {}
+[17.606339] (-) TimerEvent: {}
+[17.707506] (-) TimerEvent: {}
+[17.808315] (-) TimerEvent: {}
+[17.908853] (-) TimerEvent: {}
+[18.009399] (-) TimerEvent: {}
+[18.110159] (-) TimerEvent: {}
+[18.210625] (-) TimerEvent: {}
+[18.311115] (-) TimerEvent: {}
+[18.411701] (-) TimerEvent: {}
+[18.512156] (-) TimerEvent: {}
+[18.612775] (-) TimerEvent: {}
+[18.713312] (-) TimerEvent: {}
+[18.813920] (-) TimerEvent: {}
+[18.914569] (-) TimerEvent: {}
+[19.015308] (-) TimerEvent: {}
+[19.116096] (-) TimerEvent: {}
+[19.216694] (-) TimerEvent: {}
+[19.317175] (-) TimerEvent: {}
+[19.417733] (-) TimerEvent: {}
+[19.518352] (-) TimerEvent: {}
+[19.619061] (-) TimerEvent: {}
+[19.719515] (-) TimerEvent: {}
+[19.820072] (-) TimerEvent: {}
+[19.920844] (-) TimerEvent: {}
+[19.988079] (hsl) StdoutLine: {'line': b'[100%] Built target pointcloud2laserscan\n'}
+[20.006308] (hsl) CommandEnded: {'returncode': 0}
+[20.021073] (-) TimerEvent: {}
+[20.045125] (hsl) JobProgress: {'identifier': 'hsl', 'progress': 'install'}
+[20.061576] (hsl) Command: {'cmd': ['/usr/bin/cmake', '--install', '/workspace/src/pointcloud2laserscan/build/hsl'], 'cwd': '/workspace/src/pointcloud2laserscan/build/hsl', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('TMUX', '/tmp/tmux-0/default,514,0'), ('WS', '/workspace'), ('HOSTNAME', 'homa-NMH-WCX9'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/workspace/install/explorer_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/workspace/src/pointcloud2laserscan/src'), ('TERM_PROGRAM_VERSION', '3.2a'), ('ROS_PYTHON_VERSION', '3'), ('LC_CTYPE', 'C.UTF-8'), ('COLCON_PREFIX_PATH', '/workspace/src/pointcloud2laserscan/install:/workspace/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'screen'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('TERM_PROGRAM', 'tmux'), ('ROS_DOMAIN_ID', '231'), ('AMENT_PREFIX_PATH', '/workspace/src/pointcloud2laserscan/install/hsl:/workspace/install/survey:/workspace/install/hsl:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_interfaces:/workspace/install/explorer_cartographer:/workspace/install/explorer_bringup:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PWD', '/workspace/src/pointcloud2laserscan/build/hsl'), ('PYTHONPATH', '/workspace/build/explorer_wanderer:/workspace/install/explorer_wanderer/lib/python3.10/site-packages:/workspace/build/explorer_navigation2:/workspace/install/explorer_navigation2/lib/python3.10/site-packages:/workspace/install/explorer_interfaces/local/lib/python3.10/dist-packages:/workspace/build/explorer_bringup:/workspace/install/explorer_bringup/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('TMUX_PANE', '%2'), ('CMAKE_PREFIX_PATH', '/workspace/src/pointcloud2laserscan/install/hsl:/workspace/install/survey:/workspace/install/hsl:/workspace/install/explorer_interfaces:/workspace/install/explorer_cartographer:/workspace/install/explorer_wanderer:/workspace/install/explorer_navigation2:/workspace/install/explorer_bringup:/opt/ros/humble')]), 'shell': False}
+[20.072976] (hsl) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[20.073726] (hsl) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[20.074154] (hsl) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/lib/hsl/pointcloud2laserscan\n'}
+[20.074597] (hsl) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/src/pointcloud2laserscan.cpp\n'}
+[20.074894] (hsl) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/ament_index/resource_index/package_run_dependencies/hsl\n'}
+[20.075093] (hsl) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/ament_index/resource_index/parent_prefix_path/hsl\n'}
+[20.075383] (hsl) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/environment/ament_prefix_path.sh\n'}
+[20.075521] (hsl) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/environment/ament_prefix_path.dsv\n'}
+[20.075634] (hsl) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/environment/path.sh\n'}
+[20.075743] (hsl) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/environment/path.dsv\n'}
+[20.075892] (hsl) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/local_setup.bash\n'}
+[20.076041] (hsl) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/local_setup.sh\n'}
+[20.076144] (hsl) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/local_setup.zsh\n'}
+[20.076268] (hsl) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/local_setup.dsv\n'}
+[20.076372] (hsl) StdoutLine: {'line': b'-- Symlinking: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.dsv\n'}
+[20.092278] (hsl) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/ament_index/resource_index/packages/hsl\n'}
+[20.092719] (hsl) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/cmake/hslConfig.cmake\n'}
+[20.092855] (hsl) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/cmake/hslConfig-version.cmake\n'}
+[20.093113] (hsl) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/src/pointcloud2laserscan/install/hsl/share/hsl/package.xml\n'}
+[20.098472] (hsl) CommandEnded: {'returncode': 0}
+[20.121311] (-) TimerEvent: {}
+[20.171861] (hsl) JobEnded: {'identifier': 'hsl', 'rc': 0}
+[20.174655] (-) EventReactorShutdown: {}
