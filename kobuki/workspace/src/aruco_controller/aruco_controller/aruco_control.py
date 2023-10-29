@@ -7,7 +7,6 @@ from sensor_msgs.msg import Image
 from geometry_msgs.msg import Twist
 from cv_bridge import CvBridge, CvBridgeError
 import numpy as np
-# from aruco_detector import ArucoDetector
 
 
 CENTER_MARKER = 1
@@ -45,18 +44,15 @@ class ArucoController(Node):
         aruco_dict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_100)
 
         corners, ids, rejected_img_points = cv2.aruco.detectMarkers(gray, aruco_dict)
-        
-        res, corners, ids = self.aruco_detector.get_info(frame)
-        if res:
-            if set(ids) & set([CENTER_MARKER]):
-                print("Center aruco are found!")
-                if len(corners) > 0:
-                    for i in range(0, len(ids)):
-                        # Estimate pose of each marker and return the values rvec and tvec---(different from those of camera coefficients)
-                        rvec, tvec, markerPoints = cv2.aruco.estimatePoseSingleMarkers(corners[i], 0.02, self.calib_mat,
-                                                                                self.dist_mat)
-                        print("ROT:",rvec)
-                        print("TRANS:",tvec)
+        print(ids)
+        if len(corners) > 0:
+            for i in range(0, len(ids)):
+                if set(ids[i]) & set([CENTER_MARKER]):
+                    print("Center aruco are found!")
+                    rvec, tvec, markerPoints = cv2.aruco.estimatePoseSingleMarkers(corners[i], 0.02, self.calib_mat,
+                                                                            self.dist_mat)
+                    print("ROT:",rvec)
+                    print("TRANS:",tvec)
 
 
 def main(args=None):
