@@ -4,3 +4,5 @@ FROM ${base_img}
 MAINTAINER Nikolay Dema <ndema2301@gmail.com>
 
 ### ---------------------------------------------------------------------- #
+RUN apt update && apt install python3-pip tmux -y
+RUN pip3 install opencv-python opencv-contrib-python
