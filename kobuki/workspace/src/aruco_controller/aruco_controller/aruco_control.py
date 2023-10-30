@@ -30,6 +30,8 @@ class ArucoController(Node):
         self.publisher_saver = self.create_publisher(Twist, 'commands/velocity', 1)
         self.publisher_lost = self.create_publisher(Twist, 'commands/velocity_lost', 1)
         self.publisher_distance = self.create_publisher(Range, 'distance_aruco', 1)
+        
+        self.publisher_found = self.create_publisher(Twist, 'aruco_found', 1)
         self.service_ = self.create_service(
             SetBool, "toggle_stabilization", self.callback_activate_robot)
         self.subscription = self.create_subscription(
@@ -57,18 +59,22 @@ class ArucoController(Node):
         return response
 
     def control_callback(self, msg): 
-        if not self.activated_:
-            return
+        
         print("Got image!") 
         frame = self.bridge.imgmsg_to_cv2(msg, "bgr8")
         
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         aruco_dict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_100)
-
+        
+        
         corners, ids, rejected_img_points = cv2.aruco.detectMarkers(gray, aruco_dict)
         
         if len(corners) > 0:
             print(f"Found {len(corners)} markers: {list(np.unique(ids))}")
+            self.publisher_found.publish(Twist())
+            
+            if not self.activated_:
+                return
             for i in range(0, len(ids)):
                 # print(corners[i])
                 if bool(set(ids[i]) & set(CENTER_MARKERS)):
