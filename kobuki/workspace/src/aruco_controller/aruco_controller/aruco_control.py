@@ -1,9 +1,11 @@
 import time
 import rclpy
+import math
+
 from rclpy.qos import qos_profile_sensor_data
 from rclpy.node import Node
 import cv2
-from sensor_msgs.msg import Image
+from sensor_msgs.msg import Image, Range
 from geometry_msgs.msg import Twist
 from cv_bridge import CvBridge, CvBridgeError
 import numpy as np
@@ -27,6 +29,7 @@ class ArucoController(Node):
 
         self.publisher_saver = self.create_publisher(Twist, 'commands/velocity', 1)
         self.publisher_lost = self.create_publisher(Twist, 'commands/velocity_lost', 1)
+        self.publisher_distance = self.create_publisher(Range, 'distance_aruco', 1)
         self.subscription = self.create_subscription(
             Image,
             '/camera/color/image_raw',
@@ -35,6 +38,7 @@ class ArucoController(Node):
         self.i = 0
         self.msg_saver = Twist()
         self.msg_lost = Twist()
+        self.msg_dist = Range()
         # self.last_dir = 1 # left
         
         self.calib_mat = np.load("/workspace/calibration_matrix.npy")
@@ -60,34 +64,45 @@ class ArucoController(Node):
                                                                             self.dist_mat)
                     r = R.from_rotvec(rvec[0,0])
                     print("Rotated: ",r.as_euler("xyz")[1])
-                    self.msg_lost.angular.z = r.as_euler("xyz")[1] * 3
-                    self.msg_saver.angular.z = ((frame.shape[1]/2 - 50) - np.mean(np.array(corners[i])[:,1])) * 0.03
+                    err_finder_center = ((frame.shape[1]/2 - 35) - np.mean(np.array(corners[i])[:,1]))
+                    err_lost_orient = r.as_euler("xyz")[1]
                     
-                    rect = cv2.minAreaRect(corners[i])
-                    box = cv2.boxPoints(rect)
-                    area = cv2.contourArea(box)
-                    distance = dist(area)
-                    
+                    self.msg_saver.angular.z = err_finder_center * 0.03
+                    self.msg_lost.angular.z = err_lost_orient * 3
+                    if abs(err_lost_orient) < 0.05 and abs(err_finder_center) < 5:
+                        rect = cv2.minAreaRect(corners[i])
+                        box = cv2.boxPoints(rect)
+                        area = cv2.contourArea(box)
+                        distance = dist(area)
+                        self.msg_dist.range = distance
+                        self.publisher_distance.publish(self.msg_dist)
+                        # print(distance)
+                        # # lost_linear_speed = -(0.5 - distance) * 2
+                        # # self.msg_lost.linear.x = min(0.4, abs(lost_linear_speed)) * (1 if lost_linear_speed > 0 else -1)
                     # print("Area:", area)
                     # print("Distance:", dist(area))
                     break
                 elif bool(set(ids[i]) & set(RIGHT_MARKERS)):
                     print("Right aruco is found!")
-                    break
+                    self.msg_lost.angular.z = -1.
+                    
                 elif bool(set(ids[i]) & set(LEFT_MARKERS)):
                     print("Left aruco is found!")
-                    break
+                    self.msg_lost.angular.z = 1.
+                    
                 elif bool(set(ids[i]) & set(BACK_MARKERS)):
                     print("Back aruco is found!")
-                    break
+                    self.msg_lost.angular.z = 1.
+                    
                 else:
                     print("Unknown marker found!")
         else:
             print("No markers found")
         
-        self.publisher_lost.publish(self.msg_lost)
-        self.msg_lost.angular.z = 0.
+        # self.publisher_lost.publish(self.msg_lost)
         self.publisher_saver.publish(self.msg_saver)
+        self.msg_lost.linear.z = 0.
+        self.msg_lost.linear.x = 0.
         self.msg_saver.angular.z = 0.
 
 def main(args=None):
