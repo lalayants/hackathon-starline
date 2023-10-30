@@ -18,7 +18,7 @@ def generate_launch_description():
 
     start_kobuki = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(kobuki_pkg_dir, 'launch', 'kobuki.launch.py')),
-        launch_arguments = {}
+        launch_arguments = {},
     )
 
     start_lidar = IncludeLaunchDescription(
@@ -40,7 +40,7 @@ def generate_launch_description():
     static_transformer_base_laser = Node(
 	package='tf2_ros',
 	executable='static_transform_publisher',
-	arguments= ["0", "0", "0.36", "0", "0", "0", "base_link", "laser"]
+	arguments= ["0", "0", "0.36", "3.14", "0", "0", "base_link", "laser"]
 	)
 
     static_transformer_base_footprint = Node(
