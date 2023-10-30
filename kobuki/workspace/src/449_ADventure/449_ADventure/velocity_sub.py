@@ -2,7 +2,7 @@ import rclpy
 from rclpy.node import Node
 
 from geometry_msgs.msg import Twist
-
+from geometry_msgs.msg import Vector3
 
 class VelocitySubscriber(Node):
 
@@ -16,9 +16,15 @@ class VelocitySubscriber(Node):
         self.subscription  # prevent unused variable warning
         self.publisher = self.create_publisher(Twist, 'commands/velocity_lost',10)
         self.timer = self.create_timer(0.1, self.timer_callback)
-        self.linear = None
-        self.angular = None
+        self.linear = Vector3()
+        self.linear.x = 0.0
+        self.linear.y = 0.0
+        self.linear.z = 0.0
 
+        self.angular = Vector3()
+        self.angular.x = 0.0
+        self.angular.y = 0.0
+        self.angular.z = 0.0
 
     def listener_callback(self, msg):
         self.linear = msg.linear
