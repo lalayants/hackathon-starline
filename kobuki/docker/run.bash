@@ -6,7 +6,7 @@ KOB_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 
 xhost +local:docker > /dev/null || true
 
-IMG_NAME="nickodema/hsl_2022_kobuki"
+IMG_NAME="hsl_2022_kobuki_sol"
 
 
 ### DOCKER RUN ----------------------------------------------------------- #

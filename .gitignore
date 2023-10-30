@@ -1,3 +1,8 @@
 simulation/workspace/build/*
 simulation/workspace/install/*
 simulation/workspace/log/*
+
+
+kobuki/workspace/build/*
+kobuki/workspace/install/*
+kobuki/workspace/log/*
