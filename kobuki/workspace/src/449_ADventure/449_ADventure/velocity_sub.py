@@ -33,6 +33,9 @@ class VelocitySubscriber(Node):
         while not self.cli.wait_for_service(timeout_sec=1.0):
             print('service not available, waiting again...')
         self.req = SetBool.Request()
+        self.req.data = False
+        self.cli.call(self.req)
+        
 
     
     def clean_queue(self):
