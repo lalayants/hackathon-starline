@@ -10,7 +10,7 @@ from geometry_msgs.msg import Twist
 from cv_bridge import CvBridge, CvBridgeError
 import numpy as np
 from scipy.spatial.transform import Rotation as R
-
+from example_interfaces.srv import SetBool
 
 CENTER_MARKERS = [1]
 LEFT_MARKERS = [2]
@@ -30,22 +30,35 @@ class ArucoController(Node):
         self.publisher_saver = self.create_publisher(Twist, 'commands/velocity', 1)
         self.publisher_lost = self.create_publisher(Twist, 'commands/velocity_lost', 1)
         self.publisher_distance = self.create_publisher(Range, 'distance_aruco', 1)
+        self.service_ = self.create_service(
+            SetBool, "toggle_stabilization", self.callback_activate_robot)
         self.subscription = self.create_subscription(
             Image,
             '/camera/color/image_raw',
             self.control_callback,
             qos_profile_sensor_data)
-        self.i = 0
         self.msg_saver = Twist()
         self.msg_lost = Twist()
         self.msg_dist = Range()
-        # self.last_dir = 1 # left
+
+        self.activated_ = False
         
         self.calib_mat = np.load("/workspace/calibration_matrix.npy")
         self.dist_mat = np.load("/workspace/distortion_coefficients.npy")
         print("Node started!")
+        
+    def toggle_stabilization(self, request, response):
+        self.activated_ = request.data
+        response.success = True
+        if self.activated_:
+            response.message = "Stabilization activated"
+        else:
+            response.message = "Stabilization deactivated"
+        return response
 
     def control_callback(self, msg): 
+        if not self.activated_:
+            return
         print("Got image!") 
         frame = self.bridge.imgmsg_to_cv2(msg, "bgr8")
         

@@ -5,7 +5,7 @@ import threading
 from geometry_msgs.msg import Twist
 from geometry_msgs.msg import Vector3
 from collections import deque
-
+from example_interfaces.srv import SetBool
 
 
 
@@ -16,6 +16,7 @@ class VelocitySubscriber(Node):
         super().__init__('velocity_subscriber')
         
         self.vel_queue = deque()
+        self.cli = self.create_client(SetBool, "toggle_stabilization")
 
         self.subscription = self.create_subscription(
             Twist,
@@ -28,6 +29,10 @@ class VelocitySubscriber(Node):
         
         self.read = False
         self.repeat = False
+        
+        while not self.cli.wait_for_service(timeout_sec=1.0):
+            print('service not available, waiting again...')
+        self.req = SetBool.Request()
 
     
     def clean_queue(self):
