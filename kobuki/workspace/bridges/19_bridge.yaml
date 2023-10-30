@@ -1,0 +1,8 @@
+# Name of the domain bridge, used for node naming and logging
+name: my_bridge
+from_domain: 19
+to_domain: 20
+topics:
+  commands/velocity_lost:
+    type: geometry_msgs/msg/Twist
+    remap: commands/velocity
