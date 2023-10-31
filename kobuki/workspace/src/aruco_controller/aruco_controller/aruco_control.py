@@ -115,8 +115,8 @@ class ArucoController(Node):
                             # TODO: call hero_to_home(read path)
                             
                             self.cli_move_victim.call_async(req)
-                            time.sleep(3)
-                            self.cli_repeat.call_async(req)
+                            # time.sleep(3)
+                            # self.cli_repeat.call_async(req) done in hero_to_home
                             
                             
                             
