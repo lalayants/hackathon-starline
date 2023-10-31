@@ -1,0 +1,35 @@
+running egg_info
+creating build/maze_solver/maze_solver.egg-info
+writing build/maze_solver/maze_solver.egg-info/PKG-INFO
+writing dependency_links to build/maze_solver/maze_solver.egg-info/dependency_links.txt
+writing entry points to build/maze_solver/maze_solver.egg-info/entry_points.txt
+writing requirements to build/maze_solver/maze_solver.egg-info/requires.txt
+writing top-level names to build/maze_solver/maze_solver.egg-info/top_level.txt
+writing manifest file 'build/maze_solver/maze_solver.egg-info/SOURCES.txt'
+reading manifest file 'build/maze_solver/maze_solver.egg-info/SOURCES.txt'
+writing manifest file 'build/maze_solver/maze_solver.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /workspace/src/maze_solver/build/maze_solver/build
+creating /workspace/src/maze_solver/build/maze_solver/build/lib
+creating /workspace/src/maze_solver/build/maze_solver/build/lib/maze_solver
+copying maze_solver/__init__.py -> /workspace/src/maze_solver/build/maze_solver/build/lib/maze_solver
+copying maze_solver/planner.py -> /workspace/src/maze_solver/build/maze_solver/build/lib/maze_solver
+running install
+running install_lib
+creating /workspace/src/maze_solver/install/maze_solver/lib/python3.8/site-packages/maze_solver
+copying /workspace/src/maze_solver/build/maze_solver/build/lib/maze_solver/__init__.py -> /workspace/src/maze_solver/install/maze_solver/lib/python3.8/site-packages/maze_solver
+copying /workspace/src/maze_solver/build/maze_solver/build/lib/maze_solver/planner.py -> /workspace/src/maze_solver/install/maze_solver/lib/python3.8/site-packages/maze_solver
+byte-compiling /workspace/src/maze_solver/install/maze_solver/lib/python3.8/site-packages/maze_solver/__init__.py to __init__.cpython-38.pyc
+byte-compiling /workspace/src/maze_solver/install/maze_solver/lib/python3.8/site-packages/maze_solver/planner.py to planner.cpython-38.pyc
+running install_data
+creating /workspace/src/maze_solver/install/maze_solver/share/ament_index
+creating /workspace/src/maze_solver/install/maze_solver/share/ament_index/resource_index
+creating /workspace/src/maze_solver/install/maze_solver/share/ament_index/resource_index/packages
+copying resource/maze_solver -> /workspace/src/maze_solver/install/maze_solver/share/ament_index/resource_index/packages
+copying package.xml -> /workspace/src/maze_solver/install/maze_solver/share/maze_solver
+running install_egg_info
+Copying build/maze_solver/maze_solver.egg-info to /workspace/src/maze_solver/install/maze_solver/lib/python3.8/site-packages/maze_solver-0.0.0-py3.8.egg-info
+running install_scripts
+Installing planner script to /workspace/src/maze_solver/install/maze_solver/lib/maze_solver
+writing list of installed files to '/workspace/src/maze_solver/build/maze_solver/install.log'

@@ -6,6 +6,7 @@ from geometry_msgs.msg import Twist
 from geometry_msgs.msg import Vector3
 from nav_msgs.msg import Odometry
 from example_interfaces.srv import SetBool
+import numpy as np
 
 
 def linear_vel(t, k=1):
@@ -59,23 +60,25 @@ class VictimForwardMove(Node):
         if  self.forward:
             if abs(self.pose.x - 0.5) > 0.01:
                 print(self.pose.x)
-                self.linear.x = float(linear_vel(0.5 - self.pose.x))
+                self.linear.x = float(linear_vel(0.5 - self.pose.x, 0.6))
                 self.msg.linear = self.linear
                 self.publisher.publish(self.msg)
             else:
-                self.linear.x = 0.
-                self.msg.linear = self.linear
-                self.publisher.publish(self.msg)
+                # self.linear.x = 0.
+                # self.msg.linear = self.linear
+                # self.publisher.publish(self.msg)
                 self.forward = False
         if not self.forward :
-            if abs(self.orientation - 3.14) > 0.1:
-                self.angular.z = float(linear_vel(self.orientation - 3.14))
+            goal = np.pi             
+            if abs(self.orientation - goal) > 0.05:
+                print(self.orientation)
+                self.angular.z = float(linear_vel(-self.orientation + goal, 0.7))
                 self.msg.angular = self.angular
                 self.publisher.publish(self.msg)
             else:
-                self.angular.z = 0.
-                self.msg.angular = self.angular
-                self.publisher.publish(self.msg) 
+                # self.angular.z = 0.
+                # self.msg.angular = self.angular
+                # self.publisher.publish(self.msg) 
                 self.enabled_ = False
         return
 

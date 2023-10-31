@@ -1,0 +1,3 @@
+[console_scripts]
+planner = maze_solver.planner:main
+
