@@ -13,6 +13,8 @@ from tf2_ros.transform_listener import TransformListener
 from tf2_ros import TransformException 
 from std_msgs.msg import Empty
 from example_interfaces.srv import SetBool
+from nav_msgs.msg import Path
+
 import time
 
 class Grid():
@@ -24,6 +26,7 @@ class Grid():
         self.n_length = n_length
         self.cell_size = cell_size
         self.grid = [self.zero_cell_pose]
+        self.used = [0]
 
         self.create_grid()
 
@@ -35,6 +38,7 @@ class Grid():
                 y = -j*self.cell_size + self.zero_cell_pose[1]
                 x = i*self.cell_size + self.zero_cell_pose[0]
                 self.grid.append((x, y))
+                self.used.append(0)
 
     def get_nearest_cell(self, robot_pose):
         pass        
@@ -48,7 +52,8 @@ class GoalPublisher(Node):
         super().__init__('goal_publisher')
         self.publisher_ = self.create_publisher(PoseStamped, '/goal_pose', 10)
         timer_period = 0.5  # seconds
-        self.path = (2, 1, 0, 6, 12, 7, 6, 0, 1, 2, 3, 4, 5, 11, 10, 9, 15, 16, 17, 22, 28, 29, 27, 26, 25, 26, 27, 28, 22, 16, 15, 21, 20, 14, 8, 2)
+        # self.path = (2, 1, 0, 6, 12, 7, 6, 0, 1, 2, 3, 4, 5, 11, 10, 9, 15, 16, 17, 22, 28, 29, 27, 26, 25, 26, 27, 28, 22, 16, 15, 21, 20, 14, 8, 2)
+        self.path = (2, 1)
         self.goal = 0
         self.grid = Grid()
         self.is_reached = False
@@ -57,16 +62,29 @@ class GoalPublisher(Node):
         self.tf_listener = TransformListener(self.tf_buffer, self)
         self.timer = self.create_timer(timer_period, self.timer_callback)
         
-        self.subscription = self.create_subscription(
-            Empty,
-            '/aruco_found',
-            self.aruco_callback,
+        #self.subscription = self.create_subscription(
+        #    Empty,
+        #    '/aruco_found',
+        #    self.aruco_callback,
+        #    1)
+        
+        self.path_subscription = self.create_subscription(
+            Path,
+            '/transformed_global_plan',
+            self.path_callback,
             1)
         self.n_found = 0
         self.last_found = time.time()
         
         self.cli = self.create_client(SetBool, "toggle_stabilization")
     
+    def path_callback(self, msg):
+        path_length = 0
+        for i in range(1, len(msg.poses)):
+            path_length += ((msg.poses[i].pose.position.x - msg.poses[i - 1].pose.position.x)**2 + (msg.poses[i].pose.position.y - msg.poses[i - 1].pose.position.y)**2)**0.5
+
+        print("PATH LENGTH:", path_length)
+
     def aruco_callback(self, msg): 
         print(time.time(),self.last_found)
         if time.time() - self.last_found > 1:
