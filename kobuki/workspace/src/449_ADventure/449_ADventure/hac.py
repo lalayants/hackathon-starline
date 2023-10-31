@@ -9,7 +9,7 @@ from example_interfaces.srv import SetBool
 
 
 def linear_vel(t, k=1):
-    return max(k*t, 1) 
+    return max(min(k*t, 1.) ,-1)
 
 class VictimForwardMove(Node):
 
@@ -25,7 +25,7 @@ class VictimForwardMove(Node):
             10)
         self.subscription  # prevent unused variable warning
         self.pose = None
-        self.publisher = self.create_publisher(Twist, 'commands/velocity_lost',10)
+        self.publisher = self.create_publisher(Twist, 'commands/velocity',10)
         self.msg = Twist()
         self.linear = Vector3()
         self.linear.x = 0.0
@@ -38,34 +38,45 @@ class VictimForwardMove(Node):
         self.angular.z = 0.0
         self.msg.angular = self.angular
         
-    def move(self, request, response):
-        if not request.data :
-            return response
+        self.enabled_ = False
+        self.forward = True
         
-        while abs(self.pose.x - 0.5) > 0.001:
-            self.linear.x = linear_vel(self.pose.x - 0.5)
-            self.msg.linear = self.linear
-            self.publisher.publish(self.msg)
-        else:
-            self.linear.x = 0
-            self.msg.linear = self.linear
-            self.publisher.publish(self.msg)
-        while abs(self.orientation - 3.14) > 0.01:
-            self.angular.z = linear_vel(self.orientation - 3.14)
-            self.msg.angular = self.angular
-            self.publisher.publish(self.msg)
-        else:
-            self.angular.z = 0
-            self.msg.angular = self.angular
-            self.publisher.publish(self.msg) 
+    def move(self, request, response):
+        self.enabled_ = request.data 
         return response
 
     def listener_callback(self, msg):
+        print("GOT",msg.pose.pose.position.x)
         self.pose = msg.pose.pose.position
         orientation = msg.pose.pose.orientation
         orientation_list = [orientation.x, orientation.y, orientation.z, orientation.w]
         (roll, pitch, yaw) = euler_from_quaternion (orientation_list)
         self.orientation = yaw
+        if not self.enabled_:
+            return
+        
+        
+        if  self.forward:
+            if abs(self.pose.x - 0.5) > 0.01:
+                print(self.pose.x)
+                self.linear.x = float(linear_vel(0.5 - self.pose.x))
+                self.msg.linear = self.linear
+                self.publisher.publish(self.msg)
+            else:
+                self.linear.x = 0.
+                self.msg.linear = self.linear
+                self.publisher.publish(self.msg)
+                self.forward = False
+        if not self.forward :
+            if abs(self.orientation - 3.14) > 0.1:
+                self.angular.z = float(linear_vel(self.orientation - 3.14))
+                self.msg.angular = self.angular
+                self.publisher.publish(self.msg)
+            else:
+                self.angular.z = 0.
+                self.msg.angular = self.angular
+                self.publisher.publish(self.msg) 
+                self.enabled_ = False
         return
 
 

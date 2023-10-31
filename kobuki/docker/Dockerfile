@@ -9,3 +9,5 @@ RUN pip3 install opencv-python opencv-contrib-python scipy
 RUN apt install ros-$ROS_DISTRO-domain-bridge -y
 RUN apt install nano vim -y
 RUN apt install ros-galactic-slam-toolbox ros-galactic-navigation2 ros-galactic-nav2-bringup -y
+RUN apt install ros-galactic-tf-transformations -y
+RUN pip3 install transforms3d
