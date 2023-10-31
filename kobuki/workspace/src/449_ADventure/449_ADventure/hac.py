@@ -57,7 +57,7 @@ class VictimForwardMove(Node):
         else:
             self.angular.z = 0
             self.msg.angular = self.angular
-            self.publisher.publish(self.msg)
+            self.publisher.publish(self.msg) 
         return response
 
     def listener_callback(self, msg):
