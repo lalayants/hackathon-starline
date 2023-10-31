@@ -94,7 +94,7 @@ class HeroRotateMove(Node):
         #         # self.publisher.publish(self.msg)
         #         self.forward = False
         if self.enabled_ :
-            goal = np.pi +  self.first_orientation          
+            goal = np.pi + self.first_orientation          
             if abs(self.orientation - goal) > 0.05:
                 print(self.orientation)
                 self.angular.z = float(linear_vel(-self.orientation + goal, 0.7))
