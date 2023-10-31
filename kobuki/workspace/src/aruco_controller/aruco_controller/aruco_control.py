@@ -7,6 +7,7 @@ from rclpy.node import Node
 import cv2
 from sensor_msgs.msg import Image, Range
 from geometry_msgs.msg import Twist
+from std_msgs.msg import Empty
 from cv_bridge import CvBridge, CvBridgeError
 import numpy as np
 from scipy.spatial.transform import Rotation as R
@@ -31,9 +32,9 @@ class ArucoController(Node):
         self.publisher_lost = self.create_publisher(Twist, 'commands/velocity_lost', 1)
         self.publisher_distance = self.create_publisher(Range, 'distance_aruco', 1)
         
-        self.publisher_found = self.create_publisher(Twist, 'aruco_found', 1)
+        self.publisher_found = self.create_publisher(Empty, 'aruco_found', 1)
         self.service_ = self.create_service(
-            SetBool, "toggle_stabilization", self.callback_activate_robot)
+            SetBool, "toggle_stabilization", self.toggle_stabilization)
         self.subscription = self.create_subscription(
             Image,
             '/camera/color/image_raw',
@@ -71,7 +72,7 @@ class ArucoController(Node):
         
         if len(corners) > 0:
             print(f"Found {len(corners)} markers: {list(np.unique(ids))}")
-            self.publisher_found.publish(Twist())
+            self.publisher_found.publish(Empty())
             
             if not self.activated_:
                 return
@@ -95,11 +96,16 @@ class ArucoController(Node):
                         distance = dist(area)
                         self.msg_dist.range = distance
                         self.publisher_distance.publish(self.msg_dist)
-                        # print(distance)
-                        # # lost_linear_speed = -(0.5 - distance) * 2
-                        # # self.msg_lost.linear.x = min(0.4, abs(lost_linear_speed)) * (1 if lost_linear_speed > 0 else -1)
-                    # print("Area:", area)
-                    # print("Distance:", dist(area))
+                        print("Distance:",distance)
+                        lost_linear_speed = -(0.5 - distance) * 2
+                        self.msg_lost.linear.x = min(0.4, abs(lost_linear_speed)) * (1 if lost_linear_speed > 0 else -1)
+                        if abs(0.5 - distance) < 0.01:
+                            print("Stabilized!")
+                            self.activated_ = False
+                            # TODO: call services
+                            
+                            
+
                     break
                 elif bool(set(ids[i]) & set(RIGHT_MARKERS)):
                     print("Right aruco is found!")
@@ -118,7 +124,7 @@ class ArucoController(Node):
         else:
             print("No markers found")
         
-        # self.publisher_lost.publish(self.msg_lost)
+        self.publisher_lost.publish(self.msg_lost)
         self.publisher_saver.publish(self.msg_saver)
         self.msg_lost.linear.z = 0.
         self.msg_lost.linear.x = 0.

@@ -6,6 +6,7 @@ from geometry_msgs.msg import Twist
 from geometry_msgs.msg import Vector3
 from collections import deque
 from example_interfaces.srv import SetBool
+import time
 
 
 
@@ -25,33 +26,48 @@ class VelocitySubscriber(Node):
             10)
         self.subscription  # prevent unusekld variable warning
         self.publisher = self.create_publisher(Twist, 'commands/velocity_lost',10)
+        
+        self.service_read = self.create_service(
+            SetBool, "lost/read", self.toggle_read)
+        self.service_repeat = self.create_service(
+            SetBool, "lost/repeat", self.toggle_repeat)
+        
         self.timer = self.create_timer(0.05, self.timer_callback)
         
         self.read = False
         self.repeat = False
         
         while not self.cli.wait_for_service(timeout_sec=1.0):
-            print('service not available, waiting again...')
+            print('service not available, waiting ...')
         self.req = SetBool.Request()
         self.req.data = False
-        self.cli.call(self.req)
+        self.cli.call_async(self.req)
+        time.sleep(1)
         
 
     
     def clean_queue(self):
         self.vel_queue = deque()
     
-    def read(self):
-        self.read = True
+    def toggle_read(self, request, response):
+        self.read = request.data
+        return response
     
-    def not_read(self):
-        self.read = False
+    def toggle_repeat(self, request, response):
+        self.repeat = request.data
+        return response
+    
+    # def read(self):
+    #     self.read = True
+    
+    # def not_read(self):
+    #     self.read = False
 
-    def repeat(self):
-        self.repeat = True
+    # def repeat(self):
+    #     self.repeat = True
     
-    def not_repeat(self):
-        self.repeat = False
+    # def not_repeat(self):
+    #     self.repeat = False
 
     def listener_callback(self, msg):
         if self.read:
