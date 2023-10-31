@@ -68,14 +68,17 @@ class GoalPublisher(Node):
         self.cli = self.create_client(SetBool, "toggle_stabilization")
     
     def aruco_callback(self, msg): 
+        print(time.time(),self.last_found)
         if time.time() - self.last_found > 1:
             self.n_found = 1
-        
+        else:
+            self.n_found += 1
         if self.n_found == 10:
             self.req = SetBool.Request()
             self.req.data = True
             self.cli.call_async(self.req)
             self.destroy_node()
+            
         
         self.last_found = time.time()
             
