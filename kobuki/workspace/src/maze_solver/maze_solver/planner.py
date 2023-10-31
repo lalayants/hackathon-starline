@@ -11,6 +11,9 @@ from tf2_ros.buffer import Buffer
 from tf2_ros.transform_listener import TransformListener 
 
 from tf2_ros import TransformException 
+from std_msgs.msg import Empty
+from example_interfaces.srv import SetBool
+import time
 
 class Grid():
 
@@ -54,6 +57,32 @@ class GoalPublisher(Node):
         self.tf_listener = TransformListener(self.tf_buffer, self)
         self.timer = self.create_timer(timer_period, self.timer_callback)
         
+        self.subscription = self.create_subscription(
+            Empty,
+            '/aruco_found',
+            self.aruco_callback,
+            1)
+        self.n_found = 0
+        self.last_found = time.time()
+        
+        self.cli = self.create_client(SetBool, "toggle_stabilization")
+    
+    def aruco_callback(self, msg): 
+        print(time.time(),self.last_found)
+        if time.time() - self.last_found > 1:
+            self.n_found = 1
+        else:
+            self.n_found += 1
+        if self.n_found == 10:
+            self.req = SetBool.Request()
+            self.req.data = True
+            self.cli.call_async(self.req)
+            self.destroy_node()
+            
+        
+        self.last_found = time.time()
+            
+    
     def get_robot_pose(self):
         try:
             now = rclpy.time.Time()
@@ -107,11 +136,6 @@ def main(args=None):
     minimal_publisher = GoalPublisher()
 
     rclpy.spin(minimal_publisher)
-
-    # Destroy the node explicitly
-    # (optional - otherwise it will be done automatically
-    # when the garbage collector destroys the node object)
-    minimal_publisher.destroy_node()
     rclpy.shutdown()
 
 
