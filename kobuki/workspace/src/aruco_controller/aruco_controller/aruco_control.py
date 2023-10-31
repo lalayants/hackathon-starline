@@ -123,6 +123,7 @@ class ArucoController(Node):
                     print("Unknown marker found!")
         else:
             print("No markers found")
+            return
         
         self.publisher_lost.publish(self.msg_lost)
         self.publisher_saver.publish(self.msg_saver)
