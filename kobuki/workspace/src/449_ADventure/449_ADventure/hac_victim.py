@@ -28,8 +28,8 @@ class VictimForwardMove(Node):
             10)
         self.subscription  # prevent unused variable warning
         self.pose = None
-        self.publisher = self.create_publisher(Twist, 'commands/velocity_lost',10)
-        self.publisher_reset_odom = self.create_publisher(Empty, '/commands/reset_odometry', 1)
+        self.publisher = self.create_publisher(Twist, 'commands/velocity_lost', 10)
+        self.publisher_reset_odom = self.create_publisher(Empty, '/commands/reset_odometry_lost', 1)
         
         self.msg = Twist()
         self.linear = Vector3()
