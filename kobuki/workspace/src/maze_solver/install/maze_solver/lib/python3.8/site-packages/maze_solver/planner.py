@@ -45,7 +45,7 @@ class GoalPublisher(Node):
         super().__init__('goal_publisher')
         self.publisher_ = self.create_publisher(PoseStamped, '/goal_pose', 10)
         timer_period = 0.5  # seconds
-        self.path = (2, 1, 0, 6, 12, 7, 6, 0, 1, 2, 3, 4, 5, 11, 10, 9, 15, 16, 17, 22, 28, 29, 27, 26, 25, 26, 27, 28, 22, 16, 15, 21, 20, 14, 8, 2)
+        self.path = (2, 1, 0, 6, 12, 7, 6, 0, 1, 2, 3, 4, 5, 11, 10, 9, 15, 16, 17, 22, 28, 29, 27, 26, 25)
         self.goal = 0
         self.grid = Grid()
         self.is_reached = False
