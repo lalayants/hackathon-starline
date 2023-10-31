@@ -6,6 +6,8 @@ from geometry_msgs.msg import Twist
 from geometry_msgs.msg import Vector3
 from nav_msgs.msg import Odometry
 from example_interfaces.srv import SetBool
+from std_msgs.msg import Empty
+
 import numpy as np
 
 
@@ -21,12 +23,14 @@ class VictimForwardMove(Node):
         
         self.subscription = self.create_subscription(
             Odometry,
-            '/odom',
+            '/odom_lost',
             self.listener_callback,
             10)
         self.subscription  # prevent unused variable warning
         self.pose = None
         self.publisher = self.create_publisher(Twist, 'commands/velocity_lost',10)
+        self.zero_odom_publisher = self.create_publisher(Empty, '/commands/reset_odometry_lost',1)
+        
         self.msg = Twist()
         self.linear = Vector3()
         self.linear.x = 0.0
@@ -49,12 +53,8 @@ class VictimForwardMove(Node):
 
     def listener_callback(self, msg):
         if self.first_time:
-            self.first_pose = msg.pose.pose.position
-            orientation = msg.pose.pose.orientation
-            orientation_list = [orientation.x, orientation.y, orientation.z, orientation.w]
-            (roll, pitch, yaw) = euler_from_quaternion (orientation_list)
-            self.first_orientation = yaw
-            self.first_time = False
+            self.zero_odom_publisher.publish(Empty())
+            return
         print("GOT",msg.pose.pose.position.x)
         self.pose = msg.pose.pose.position
         orientation = msg.pose.pose.orientation

@@ -6,3 +6,11 @@ topics:
   commands/velocity_lost:
     type: geometry_msgs/msg/Twist
     remap: commands/velocity
+  commands/reset_odometry_lost:
+    type: std_msgs/msg/Empty
+    remap: commands/reset_odometry
+  odom:
+    from_domain: 20
+    to_domain: 19
+    type: nav_msgs/msg/Odometry
+    remap: odom_lost
