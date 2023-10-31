@@ -52,7 +52,7 @@ class ArucoController(Node):
         
         self.cli_rotate_hero = self.create_client(SetBool, "rotate_hero")
         self.cli_move_victim = self.create_client(SetBool, "move_forward")
-        self.cli_read = self.create_client(SetBool, "lost/read")
+        self.cli_repeat = self.create_client(SetBool, "lost/repeat")
         print("Node started!")
         
     def toggle_stabilization(self, request, response):
@@ -116,7 +116,7 @@ class ArucoController(Node):
                             
                             self.cli_move_victim.call_async(req)
                             time.sleep(3)
-                            self.cli_read.call_async(req)
+                            self.cli_repeat.call_async(req)
                             
                             
                             
