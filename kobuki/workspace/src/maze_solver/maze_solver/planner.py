@@ -19,16 +19,16 @@ import time
 
 class Grid():
 
-    def __init__(self, n_width:int = 3, n_length:int = 3, cell_size:float = 1.0):
+    def __init__(self, n_width:int = 6, n_length:int = 5, cell_size:float = 1.0):
         self.origin_pose = [0.0, 0.0]
-        self.zero_cell_pose = (0.8, 1.2)
+        self.zero_cell_pose = (0.8, 2.2)
         self.n_width = n_width
         self.n_length = n_length
         self.cell_size = cell_size
         self.grid = [self.zero_cell_pose]
         self.used = [0]
         self.pred = [-1]
-
+        self.restrictions = [[]]
         self.create_grid()
 
     def create_grid(self):
@@ -41,6 +41,8 @@ class Grid():
                 self.grid.append((x, y))
                 self.used.append(0)
                 self.pred.append(-1)
+                self.restrictions.append([])
+
 
     def get_nearest_cell(self, robot_pose):
         pass        
@@ -57,8 +59,9 @@ class GoalPublisher(Node):
         # self.path = (2, 1, 0, 6, 12, 7, 6, 0, 1, 2, 3, 4, 5, 11, 10, 9, 15, 16, 17, 22, 28, 29, 27, 26, 25, 26, 27, 28, 22, 16, 15, 21, 20, 14, 8, 2)
         self.path = (2, 1)
         self.current = -1
-        self.goal = 1
+        self.goal = 2
         self.grid = Grid()
+        self.grid.pred[self.goal] = -2
         self.is_reached = False
         self.time_stamp = Clock().now()
         self.tf_buffer = Buffer()
@@ -73,19 +76,20 @@ class GoalPublisher(Node):
         
         self.path_subscription = self.create_subscription(
             Path,
-            '/transformed_global_plan',
+            '/received_global_plan',
             self.path_callback,
             1)
         self.n_found = 0
         self.last_found = time.time()
-        
+        self.path_length = 0
+        self.path_was_updated = True
         self.cli = self.create_client(SetBool, "toggle_stabilization")
     
     def path_callback(self, msg):
-        path_length = 0
+        self.path_length = 0
         for i in range(1, len(msg.poses)):
-            path_length += ((msg.poses[i].pose.position.x - msg.poses[i - 1].pose.position.x)**2 + (msg.poses[i].pose.position.y - msg.poses[i - 1].pose.position.y)**2)**0.5
-
+            self.path_length += ((msg.poses[i].pose.position.x - msg.poses[i - 1].pose.position.x)**2 + (msg.poses[i].pose.position.y - msg.poses[i - 1].pose.position.y)**2)**0.5
+            self.path_was_updated = True
         #print("PATH LENGTH:", path_length)
 
     def aruco_callback(self, msg): 
@@ -123,39 +127,58 @@ class GoalPublisher(Node):
         pose = self.get_robot_pose()
         if pose is None:
             return 
-        
+        new_goal = False
+
+        if self.path_was_updated and self.path_length > 1.5:
+            self.grid.restrictions[self.current].append(self.goal)
+            self.grid.restrictions[self.goal].append(self.current)
+            new_goal = True
+            print(f'Goal {self.goal} is not neighbour of {self.current}')
+
         goal_pose = self.grid.grid[self.goal]
         error = ((pose[0] - goal_pose[0])**2 + (pose[1] - goal_pose[1])**2)**(0.5) 
         
-        if error < 0.4:
-            print('Reached goal: ', self.goal)
-            self.grid.pred[self.goal] = self.current
+        if error < 0.4 and not new_goal:
+            new_goal = True
+            if self.grid.pred[self.goal] == -1:
+                self.grid.pred[self.goal] = self.current
+            self.grid.used[self.goal] = 1
             self.current = self.goal
-            self.grid.used[self.current] = 1
+            
+            print('Reached goal: ', self.goal)
+
+        if new_goal:
+            print('Finding new goal...')
             flag = True
             print(self.goal % self.grid.n_width)
-            if self.goal % self.grid.n_width > 0:
-                if self.grid.used[self.goal - 1] == 0:
+            if self.current % self.grid.n_width > 0:
+                possible_goal = self.current - 1
+                if self.grid.used[self.current - 1] == 0 and not (possible_goal in self.grid.restrictions[self.current]):
                     # Has left neigbour
-                    self.goal -= 1
+                    self.goal = possible_goal
                     flag = False
-            if (self.goal < self.grid.n_length * (self.grid.n_width - 1) - 1):
-                if self.grid.used[self.goal + self.grid.n_width] == 0 and flag:
+            if (self.current < self.grid.n_length * (self.grid.n_width - 1) - 1):
+                possible_goal = self.current + self.grid.n_width  
+                if self.grid.used[self.current + self.grid.n_width] == 0 and flag and not (possible_goal in self.grid.restrictions[self.current]):
                     # Has up neigbour
-                    self.goal += self.grid.n_width  
+                    self.goal = possible_goal
                     flag = False
-            if self.goal % self.grid.n_width < self.grid.n_width - 1:
-                if self.grid.used[self.goal + 1] == 0 and flag:
+            if self.current % self.grid.n_width < self.grid.n_width - 1:
+                possible_goal = self.current + 1
+                if self.grid.used[self.current + 1] == 0 and flag and not (possible_goal in self.grid.restrictions[self.current]):
                     # Has right neigbour
-                    self.goal += 1
+                    self.goal = possible_goal
                     flag = False
-            if self.goal >= self.grid.n_width:
-                if self.grid.used[self.goal - self.grid.n_width] == 0 and flag:
+            if self.current >= self.grid.n_width:
+                possible_goal = self.current - self.grid.n_width
+                if self.grid.used[self.current - self.grid.n_width] == 0 and flag and not (possible_goal in self.grid.restrictions[self.current]):
                     # Has down neigbour
-                    self.goal -= self.grid.n_width
+                    self.goal = possible_goal
                     flag = False
             if flag:
                 self.goal = self.grid.pred[self.current]
+                
+            self.path_was_updated = False
             print('Next goal: ', self.goal)
         pose = PoseStamped()
 
