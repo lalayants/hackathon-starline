@@ -64,7 +64,7 @@ class GoalPublisher(Node):
             1)
         self.n_found = 0
         self.last_found = time.time()
-        self.stop_publish_velocities = True
+        self.stop_publish_velocities = False
         
         self.cli = self.create_client(SetBool, "toggle_stabilization")
     
