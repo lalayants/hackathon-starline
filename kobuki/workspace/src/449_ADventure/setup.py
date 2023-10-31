@@ -26,6 +26,7 @@ setup(
     entry_points={
         'console_scripts': [
             'vel_copy = 449_ADventure.velocity_sub:main',
+            'victim_to_hero = 449_ADventure.hac:main',
         ],
     },
 )
