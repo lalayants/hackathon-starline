@@ -48,6 +48,11 @@ class ArucoController(Node):
         
         self.calib_mat = np.load("/workspace/calibration_matrix.npy")
         self.dist_mat = np.load("/workspace/distortion_coefficients.npy")
+        
+        
+        self.cli_rotate_hero = self.create_client(SetBool, "rotate_hero")
+        self.cli_move_victim = self.create_client(SetBool, "move_forward")
+        self.cli_repeat = self.create_client(SetBool, "lost/repeat")
         print("Node started!")
         
     def toggle_stabilization(self, request, response):
@@ -102,7 +107,19 @@ class ArucoController(Node):
                         if abs(0.5 - distance) < 0.01:
                             print("Stabilized!")
                             self.activated_ = False
-                            # TODO: call services
+                            
+                            req = SetBool.Request()
+                            req.data = True
+                            self.cli_rotate_hero.call_async(req)
+                            time.sleep(3)
+                            # TODO: call hero_to_home(read path)
+                            
+                            self.cli_move_victim.call_async(req)
+                            time.sleep(3)
+                            self.cli_repeat.call_async(req)
+                            
+                            
+                            
                             
                             
 
