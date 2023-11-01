@@ -19,7 +19,8 @@ import time
 
 class Grid():
 
-    def __init__(self, n_width:int = 6, n_length:int = 5, cell_size:float = 1.0):
+    def __init__(self, n_width:int = 6, n_length:int = 5, cell_size:float = 1.0, stage=2):
+        self.stage2_poses = [13, 18, 19, 22, 23, 24, 25, 26, 27, 28, 29]
         self.origin_pose = [0.0, 0.0]
         self.zero_cell_pose = (0.8, 2.2)
         self.n_width = n_width
@@ -29,6 +30,7 @@ class Grid():
         self.used = [0]
         self.pred = [-1]
         self.restrictions = [[]]
+        self.stage = stage
         self.create_grid()
 
     def create_grid(self):
@@ -39,7 +41,11 @@ class Grid():
                 y = -j*self.cell_size + self.zero_cell_pose[1]
                 x = i*self.cell_size + self.zero_cell_pose[0]
                 self.grid.append((x, y))
-                self.used.append(0)
+                id = i*self.n_width + j
+                is_used = 0
+                if self.stage == 1 and id in self.stage2_poses:
+                    is_used = 1
+                self.used.append(is_used)
                 self.pred.append(-1)
                 self.restrictions.append([])
 
@@ -60,7 +66,7 @@ class GoalPublisher(Node):
         self.path = (2, 1)
         self.current = -1
         self.goal = 2
-        self.grid = Grid()
+        self.grid = Grid(stage=2)
         self.grid.pred[self.goal] = -2
         self.is_reached = False
         self.time_stamp = Clock().now()
@@ -129,7 +135,7 @@ class GoalPublisher(Node):
             return 
         new_goal = False
 
-        if self.path_was_updated and self.path_length > 1.5:
+        if self.path_was_updated and self.path_length > 1.7:
             self.grid.restrictions[self.current].append(self.goal)
             self.grid.restrictions[self.goal].append(self.current)
             new_goal = True
@@ -138,7 +144,7 @@ class GoalPublisher(Node):
         goal_pose = self.grid.grid[self.goal]
         error = ((pose[0] - goal_pose[0])**2 + (pose[1] - goal_pose[1])**2)**(0.5) 
         
-        if error < 0.4 and not new_goal:
+        if error < 0.3 and not new_goal:
             new_goal = True
             if self.grid.pred[self.goal] == -1:
                 self.grid.pred[self.goal] = self.current
@@ -150,28 +156,28 @@ class GoalPublisher(Node):
         if new_goal:
             print('Finding new goal...')
             flag = True
-            print(self.goal % self.grid.n_width)
+            # print(self.goal % self.grid.n_width)
             if self.current % self.grid.n_width > 0:
                 possible_goal = self.current - 1
-                if self.grid.used[self.current - 1] == 0 and not (possible_goal in self.grid.restrictions[self.current]):
+                if self.grid.used[possible_goal] == 0 and not (possible_goal in self.grid.restrictions[self.current]):
                     # Has left neigbour
                     self.goal = possible_goal
                     flag = False
             if (self.current < self.grid.n_length * (self.grid.n_width - 1) - 1):
                 possible_goal = self.current + self.grid.n_width  
-                if self.grid.used[self.current + self.grid.n_width] == 0 and flag and not (possible_goal in self.grid.restrictions[self.current]):
+                if self.grid.used[possible_goal] == 0 and flag and not (possible_goal in self.grid.restrictions[self.current]):
                     # Has up neigbour
                     self.goal = possible_goal
                     flag = False
             if self.current % self.grid.n_width < self.grid.n_width - 1:
                 possible_goal = self.current + 1
-                if self.grid.used[self.current + 1] == 0 and flag and not (possible_goal in self.grid.restrictions[self.current]):
+                if self.grid.used[possible_goal] == 0 and flag and not (possible_goal in self.grid.restrictions[self.current]):
                     # Has right neigbour
                     self.goal = possible_goal
                     flag = False
             if self.current >= self.grid.n_width:
                 possible_goal = self.current - self.grid.n_width
-                if self.grid.used[self.current - self.grid.n_width] == 0 and flag and not (possible_goal in self.grid.restrictions[self.current]):
+                if self.grid.used[possible_goal] == 0 and flag and not (possible_goal in self.grid.restrictions[self.current]):
                     # Has down neigbour
                     self.goal = possible_goal
                     flag = False
