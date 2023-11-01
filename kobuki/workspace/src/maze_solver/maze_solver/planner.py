@@ -69,6 +69,7 @@ class GoalPublisher(Node):
         self.grid = Grid(stage=2)
         self.grid.pred[self.goal] = -2
         self.is_reached = False
+        self.last_goal_update = time.time()
         self.time_stamp = Clock().now()
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self)
@@ -135,6 +136,12 @@ class GoalPublisher(Node):
             return 
         new_goal = False
 
+        if (time.time() - self.last_goal_update) > 180:
+            print(f'Cannot reach {self.goal} because of timeout')
+            self.grid.restrictions[self.current].append(self.goal)
+            self.grid.restrictions[self.goal].append(self.current)
+            new_goal = True
+
         if self.path_was_updated and self.path_length > 1.7:
             self.grid.restrictions[self.current].append(self.goal)
             self.grid.restrictions[self.goal].append(self.current)
@@ -156,6 +163,7 @@ class GoalPublisher(Node):
         if new_goal:
             print('Finding new goal...')
             flag = True
+            
             # print(self.goal % self.grid.n_width)
             if self.current % self.grid.n_width > 0:
                 possible_goal = self.current - 1
@@ -184,6 +192,7 @@ class GoalPublisher(Node):
             if flag:
                 self.goal = self.grid.pred[self.current]
                 
+            self.last_goal_update = time.time()
             self.path_was_updated = False
             print('Next goal: ', self.goal)
         pose = PoseStamped()
