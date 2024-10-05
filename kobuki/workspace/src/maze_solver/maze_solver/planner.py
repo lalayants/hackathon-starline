@@ -88,7 +88,8 @@ class GoalPublisher(Node):
             1)
         self.n_found = 0
         self.last_found = time.time()
-
+        self.stop_publish_velocities = False
+        
         self.path_length = 0
         self.path_was_updated = True
         self.stop_publish_velocities = True
