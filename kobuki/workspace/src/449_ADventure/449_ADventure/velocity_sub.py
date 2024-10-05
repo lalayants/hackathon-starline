@@ -37,12 +37,12 @@ class VelocitySubscriber(Node):
         self.read = False
         self.repeat = False
         
-        while not self.cli.wait_for_service(timeout_sec=1.0):
-            print('service not available, waiting ...')
+        # while not self.cli.wait_for_service(timeout_sec=1.0):
+        #     print('service not available, waiting ...')
         self.req = SetBool.Request()
         self.req.data = False
-        self.cli.call_async(self.req)
-        time.sleep(1)
+        # self.cli.call_async(self.req)
+        # time.sleep(1)
         
 
     

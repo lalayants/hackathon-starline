@@ -88,8 +88,11 @@ class GoalPublisher(Node):
             1)
         self.n_found = 0
         self.last_found = time.time()
+
         self.path_length = 0
         self.path_was_updated = True
+        self.stop_publish_velocities = True
+      
         self.cli = self.create_client(SetBool, "toggle_stabilization")
     
     def path_callback(self, msg):
@@ -100,15 +103,16 @@ class GoalPublisher(Node):
         #print("PATH LENGTH:", path_length)
 
     def aruco_callback(self, msg): 
-        print(time.time(),self.last_found)
+        print(time.time(), self.last_found)
         if time.time() - self.last_found > 1:
             self.n_found = 1
         else:
             self.n_found += 1
-        if self.n_found == 10:
+        if self.n_found == 1:
             self.req = SetBool.Request()
             self.req.data = True
             self.cli.call_async(self.req)
+            self.stop_publish_velocities = True
             self.destroy_node()
             
         
@@ -132,7 +136,7 @@ class GoalPublisher(Node):
 
     def timer_callback(self):
         pose = self.get_robot_pose()
-        if pose is None:
+        if pose is None or self.stop_publish_velocities:
             return 
         new_goal = False
 

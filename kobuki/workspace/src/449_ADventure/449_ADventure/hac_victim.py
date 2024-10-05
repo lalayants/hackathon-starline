@@ -5,6 +5,8 @@ from tf_transformations import euler_from_quaternion, quaternion_from_euler
 from geometry_msgs.msg import Twist
 from geometry_msgs.msg import Vector3
 from nav_msgs.msg import Odometry
+from std_msgs.msg import Empty
+
 from example_interfaces.srv import SetBool
 import numpy as np
 
@@ -21,12 +23,14 @@ class VictimForwardMove(Node):
         
         self.subscription = self.create_subscription(
             Odometry,
-            '/odom',
+            '/odom_lost',
             self.listener_callback,
             10)
         self.subscription  # prevent unused variable warning
         self.pose = None
-        self.publisher = self.create_publisher(Twist, 'commands/velocity',10)
+        self.publisher = self.create_publisher(Twist, 'commands/velocity_lost', 10)
+        self.publisher_reset_odom = self.create_publisher(Empty, '/commands/reset_odometry_lost', 1)
+        
         self.msg = Twist()
         self.linear = Vector3()
         self.linear.x = 0.0
@@ -39,6 +43,8 @@ class VictimForwardMove(Node):
         self.angular.z = 0.0
         self.msg.angular = self.angular
         
+        self.first_time = True
+        
         self.enabled_ = False
         self.forward = True
         
@@ -47,6 +53,9 @@ class VictimForwardMove(Node):
         return response
 
     def listener_callback(self, msg):
+        if self.first_time:
+            self.publisher_reset_odom.publish(Empty())  #### reset odom 
+            self.first_time = False
         print("GOT",msg.pose.pose.position.x)
         self.pose = msg.pose.pose.position
         orientation = msg.pose.pose.orientation
@@ -67,19 +76,20 @@ class VictimForwardMove(Node):
                 # self.linear.x = 0.
                 # self.msg.linear = self.linear
                 # self.publisher.publish(self.msg)
-                self.forward = False
-        if not self.forward :
-            goal = np.pi             
-            if abs(self.orientation - goal) > 0.05:
-                print(self.orientation)
-                self.angular.z = float(linear_vel(-self.orientation + goal, 0.7))
-                self.msg.angular = self.angular
-                self.publisher.publish(self.msg)
-            else:
-                # self.angular.z = 0.
-                # self.msg.angular = self.angular
-                # self.publisher.publish(self.msg) 
                 self.enabled_ = False
+                self.forward = False
+        # if not self.forward :
+        #     goal = np.pi             
+        #     if abs(self.orientation - goal) > 0.05:
+        #         print(self.orientation)
+        #         self.angular.z = float(linear_vel(-self.orientation + goal, 0.7))
+        #         self.msg.angular = self.angular
+        #         self.publisher.publish(self.msg)
+        #     else:
+        #         # self.angular.z = 0.
+        #         # self.msg.angular = self.angular
+        #         # self.publisher.publish(self.msg) 
+        #         self.enabled_ = False
         return
 
 
